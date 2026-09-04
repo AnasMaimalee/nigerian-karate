@@ -38,7 +38,7 @@ const quickActions = [
   {
     title: 'Know Your Rights',
     description:
-      'Understand your rights and responsibilities as a Nigerian karate athlete.',
+      'Understand your rights and responsibilities as a Karate Federation of Nigeria (KFN) athlete.',
     icon: Scale,
     to: '#rights',
   },
@@ -71,7 +71,7 @@ const resourceSections = [
     eyebrow: 'ATHLETE PROTECTION',
     title: 'Rights, Rules & Responsibilities',
     description:
-      'Everything Nigerian karate athletes need to understand about their rights and responsibilities in clean sport.',
+      'Everything Karate Federation of Nigeria (KFN) athletes need to understand about their rights and responsibilities in clean sport.',
     icon: ShieldCheck,
     items: [
       {
@@ -219,7 +219,7 @@ const antiDopingNews = [
   },
   {
     title:
-      'Clean Sport Education Continues Across Nigerian Karate',
+      'Clean Sport Education Continues Across Karate Federation of Nigeria (KFN)',
     date: 'August 11, 2025',
     image: images.news.training,
   },
@@ -284,7 +284,7 @@ const antiDopingNews = [
           >
             The Nigeria Karate Federation is committed to protecting
             athletes, promoting fair competition and building a culture
-            of integrity throughout Nigerian karate.
+            of integrity throughout Karate Federation of Nigeria (KFN).
           </p>
 
           <!-- CTA -->
@@ -405,7 +405,7 @@ const antiDopingNews = [
         >
           Protecting the Integrity
           <span class="block text-green-700">
-            of Nigerian Karate.
+            of Karate Federation of Nigeria (KFN).
           </span>
         </h2>
 
@@ -752,7 +752,7 @@ const antiDopingNews = [
             class="mt-5 text-base leading-8 text-green-50/80 sm:text-lg"
           >
             Stay informed, know the rules and help us protect the integrity
-            of Nigerian karate.
+            of Karate Federation of Nigeria (KFN).
           </p>
 
           <div class="mt-9 flex flex-wrap gap-4">

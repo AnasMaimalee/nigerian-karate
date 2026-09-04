@@ -120,7 +120,7 @@ const leaders = [
             class="mt-7 max-w-2xl text-base leading-8 text-white/55"
           >
             Strong leadership and effective governance are essential to the
-            continued development of Nigerian karate.
+            continued development of Karate Federation of Nigeria (KFN).
           </p>
 
         </div>
@@ -270,7 +270,7 @@ const leaders = [
               <span
                 class="text-[8px] font-black uppercase tracking-[0.18em] text-white/30"
               >
-                Nigerian Karate Federation
+                Karate Federation of Nigeria (KFN) Federation
               </span>
 
               <ArrowUpRight
@@ -458,7 +458,7 @@ const leaders = [
               <span
                 class="text-[8px] font-black uppercase tracking-[0.18em] text-white/35"
               >
-                Nigerian Karate Federation
+                Karate Federation of Nigeria (KFN) Federation
               </span>
 
               <p

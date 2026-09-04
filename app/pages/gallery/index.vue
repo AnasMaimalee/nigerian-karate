@@ -96,7 +96,7 @@ const galleryItems: GalleryItem[] = [
     location: 'Nigeria',
     date: '2026-04-20',
     description:
-      'The next generation of Nigerian karate champions.'
+      'The next generation of Karate Federation of Nigeria (KFN) champions.'
   },
 
   {
@@ -127,14 +127,14 @@ const videos: VideoItem[] = [
 
   {
     id: 2,
-    title: 'Inside Nigerian Karate Training Camp',
+    title: 'Inside Karate Federation of Nigeria (KFN) Training Camp',
     thumbnail:
       'https://images.unsplash.com/photo-1517836357463-d25dfeac3438?auto=format&fit=crop&w=1400&q=85',
     youtubeId: 'ysz5S6PUM-U',
     category: 'Training',
     duration: '12:41',
     description:
-      'Go behind the scenes with Nigerian karate athletes.'
+      'Go behind the scenes with Karate Federation of Nigeria (KFN) athletes.'
   },
 
   {
@@ -235,7 +235,7 @@ const closeVideo = () => {
             <span
               class="text-[10px] font-black uppercase tracking-[0.25em] text-[#e8d18e]"
             >
-              Nigerian Karate Federation
+              Karate Federation of Nigeria (KFN) Federation
             </span>
           </div>
 
@@ -255,7 +255,7 @@ const closeVideo = () => {
             class="mt-8 max-w-2xl text-base font-medium leading-8 text-white/80 sm:text-lg"
           >
             Experience the power, discipline, passion and unforgettable
-            moments shaping Nigerian karate.
+            moments shaping Karate Federation of Nigeria (KFN).
           </p>
 
           <div
@@ -282,7 +282,7 @@ const closeVideo = () => {
             <span
               class="text-sm font-bold text-white/70"
             >
-              Nigerian Karate Federation Media
+              Karate Federation of Nigeria (KFN)Media
             </span>
           </div>
 
@@ -501,7 +501,7 @@ const closeVideo = () => {
             class="mt-6 max-w-2xl text-base font-medium leading-8 text-white/80 sm:text-lg"
           >
             Watch championship highlights, athlete stories, training sessions
-            and exclusive moments from Nigerian karate.
+            and exclusive moments from Karate Federation of Nigeria (KFN).
           </p>
         </div>
 

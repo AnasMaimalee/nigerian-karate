@@ -3,7 +3,7 @@ import { images } from './images'
 export const newsItems = [
   {
     id: 1,
-    title: 'Nigerian Karate Federation Announces New National Championship',
+    title: 'Karate Federation of Nigeria (KFN)Announces New National Championship',
     slug: 'nkf-announces-national-championship',
     image: images.news.nationalChampionship,
     imagePosition: 'center',
@@ -13,11 +13,11 @@ export const newsItems = [
     date: '2026-09-01',
     readTime: '4 min read',
     featured: true,
-    excerpt: 'The Nigerian Karate Federation has announced plans for a major national championship bringing together athletes from across the country.'
+    excerpt: 'The Karate Federation of Nigeria (KFN)has announced plans for a major national championship bringing together athletes from across the country.'
   },
   {
     id: 2,
-    title: 'Young Nigerian Karate Athletes Prepare For National Competition',
+    title: 'Young Karate Federation of Nigeria (KFN) Athletes Prepare For National Competition',
     slug: 'young-athletes-national-competition',
     image: images.news.youthAthletes,
     imagePosition: 'center',
@@ -59,7 +59,7 @@ export const newsItems = [
   },
   {
     id: 5,
-    title: 'Celebrating Nigerian Karate Excellence',
+    title: 'Celebrating Karate Federation of Nigeria (KFN) Excellence',
     slug: 'celebrating-nigerian-karate-excellence',
     image: images.news.excellence,
     imagePosition: 'center',

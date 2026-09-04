@@ -188,8 +188,8 @@ const relatedAthletes = computed(() => {
 
 useHead(() => ({
   title: athlete.value
-    ? `${athlete.value.name} | Nigerian Karate Federation`
-    : 'Athlete Not Found | Nigerian Karate Federation'
+    ? `${athlete.value.name} | Karate Federation of Nigeria (KFN) Federation`
+    : 'Athlete Not Found | Karate Federation of Nigeria (KFN) Federation'
 }))
 </script>
 
@@ -331,7 +331,7 @@ useHead(() => ({
                 />
               </span>
 
-              Nigerian Karate Athlete
+              Karate Federation of Nigeria (KFN) Athlete
             </div>
 
 
@@ -354,7 +354,7 @@ useHead(() => ({
               <span class="font-bold text-white">
                 {{ athlete.state }} State
               </span>
-              in Nigerian karate.
+              in Karate Federation of Nigeria (KFN).
             </p>
 
 
@@ -589,7 +589,7 @@ useHead(() => ({
             <p
               class="mt-7 text-sm leading-8 text-slate-600"
             >
-              {{ athlete.name }} is a Nigerian karate athlete competing in
+              {{ athlete.name }} is a Karate Federation of Nigeria (KFN) athlete competing in
               <strong class="font-black text-slate-950">
                 {{ athlete.category }}
               </strong>.
@@ -682,7 +682,7 @@ useHead(() => ({
                 <p
                   class="mt-2 text-xs leading-6 text-slate-500"
                 >
-                  Recognised achievement in Nigerian karate competition.
+                  Recognised achievement in Karate Federation of Nigeria (KFN) competition.
                 </p>
               </div>
 
@@ -838,7 +838,7 @@ useHead(() => ({
               <h3
                 class="mt-6 text-xl font-black"
               >
-                Nigerian Karate Federation
+                Karate Federation of Nigeria (KFN) Federation
               </h3>
 
 

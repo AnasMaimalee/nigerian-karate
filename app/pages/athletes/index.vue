@@ -222,7 +222,7 @@ const filteredAthletes = computed(() => {
           <p
             class="mt-5 max-w-2xl text-base leading-8 text-slate-600 sm:text-lg"
           >
-            Meet the competitors representing Nigerian karate across
+            Meet the competitors representing Karate Federation of Nigeria (KFN) across
             national and international competitions.
           </p>
         </div>
@@ -511,7 +511,7 @@ const filteredAthletes = computed(() => {
             class="mx-auto mt-3 max-w-md text-sm leading-7 text-slate-500"
           >
             Try changing or clearing your filters to discover more
-            Nigerian karate athletes.
+            Karate Federation of Nigeria (KFN) athletes.
           </p>
 
           <button

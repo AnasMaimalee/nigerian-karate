@@ -10,7 +10,7 @@ interface Props {
 withDefaults(defineProps<Props>(), {
   athleteCount: 2500,
   title: 'Nigeria’s Champions. One Fighting Spirit.',
-  description: 'Meet the athletes representing the strength, discipline and determination of Nigerian karate on national and international stages.'
+  description: 'Meet the athletes representing the strength, discipline and determination of Karate Federation of Nigeria (KFN) on national and international stages.'
 })
 </script>
 
@@ -28,7 +28,7 @@ withDefaults(defineProps<Props>(), {
         <div class="max-w-3xl">
           <div class="mb-6 inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-2 backdrop-blur">
             <Trophy :size="15" class="text-accent" />
-            <span class="text-[10px] font-black uppercase tracking-[0.25em] text-white/70">Nigerian Karate Federation</span>
+            <span class="text-[10px] font-black uppercase tracking-[0.25em] text-white/70">Karate Federation of Nigeria (KFN) Federation</span>
           </div>
 
           <h1 class="max-w-4xl text-5xl font-black leading-[0.95] tracking-tight sm:text-6xl md:text-7xl lg:text-8xl">

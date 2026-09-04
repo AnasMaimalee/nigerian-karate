@@ -7,7 +7,7 @@ import {
 } from 'lucide-vue-next'
 
 useHead({
-  title: 'NKRC | Nigerian Karate Federation'
+  title: 'NKRC | Karate Federation of Nigeria (KFN) Federation'
 })
 
 const activities = [
@@ -31,7 +31,7 @@ const activities = [
         >
           <ShieldCheck :size="15" />
 
-          Nigerian Karate Federation
+          Karate Federation of Nigeria (KFN) Federation
         </span>
 
         <h1
@@ -78,7 +78,7 @@ const activities = [
           <p
             class="mt-4 text-sm leading-7 text-slate-500"
           >
-            Official information and updates from the Nigerian Karate
+            Official information and updates from the Karate Federation of Nigeria (KFN)
             Federation.
           </p>
 

@@ -14,7 +14,7 @@ import { images } from '~/data/images'
 
   <img
     :src="images.hero.main"
-    alt="Nigerian Karate Federation athletes"
+    alt="Karate Federation of Nigeria (KFN)athletes"
     class="h-full w-full object-cover object-center sm:object-[center_35%] lg:object-[center_30%]"
   >
 </picture>
@@ -36,14 +36,14 @@ import { images } from '~/data/images'
             </span>
 
             <span class="text-xs font-black uppercase tracking-[0.25em] text-white/70">
-              Nigerian Karate Federation
+              Karate Federation of Nigeria (KFN) Federation
             </span>
           </div>
 
           <h1 class="max-w-4xl text-5xl font-black leading-[0.95] tracking-tight sm:text-6xl md:text-7xl xl:text-8xl">
             THE FUTURE OF
             <span class="mt-2 block text-primary">
-              NIGERIAN KARATE.
+              Karate Federation of Nigeria (KFN).
             </span>
           </h1>
 
@@ -97,7 +97,7 @@ import { images } from '~/data/images'
               </div>
 
               <h3 class="mt-8 text-2xl font-black leading-tight">
-                Experience Nigerian Karate.
+                Experience Karate Federation of Nigeria (KFN).
               </h3>
 
               <p class="mt-4 text-sm leading-7 text-white/60">

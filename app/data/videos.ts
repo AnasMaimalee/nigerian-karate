@@ -3,7 +3,7 @@ import { images } from './images'
 export const videos = [
   {
     id: 1,
-    title: 'Nigerian Karate Championship Highlights',
+    title: 'Karate Federation of Nigeria (KFN) Championship Highlights',
     videoId: 'dQw4w9WgXcQ',
     thumbnail: images.events.nationalChampionship,
     category: 'Highlights',
@@ -14,11 +14,11 @@ export const videos = [
     live: false,
     imageEffect: 'zoom',
     overlay: 'from-transparent via-black/20 to-black/90',
-    description: 'Watch the most exciting moments from Nigerian karate competition.'
+    description: 'Watch the most exciting moments from Karate Federation of Nigeria (KFN) competition.'
   },
   {
     id: 2,
-    title: 'Inside The Nigerian Karate National Team',
+    title: 'Inside The Karate Federation of Nigeria (KFN) National Team',
     videoId: 'dQw4w9WgXcQ',
     thumbnail: images.gallery.teamNigeria,
     category: 'Documentary',
@@ -60,7 +60,7 @@ export const videos = [
   },
   {
     id: 5,
-    title: 'Future Champions Of Nigerian Karate',
+    title: 'Future Champions Of Karate Federation of Nigeria (KFN)',
     videoId: 'dQw4w9WgXcQ',
     thumbnail: images.gallery.youth1,
     category: 'Youth',

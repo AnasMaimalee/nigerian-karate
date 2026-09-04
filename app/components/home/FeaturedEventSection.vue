@@ -188,7 +188,7 @@ const statusConfig = computed(() => {
             class="mt-5 max-w-xl text-sm leading-7 text-muted sm:text-base"
           >
             Follow the next major competition, championship and unforgettable
-            moment in Nigerian karate.
+            moment in Karate Federation of Nigeria (KFN).
           </p>
         </div>
 
@@ -319,7 +319,7 @@ const statusConfig = computed(() => {
               >
                 <span class="h-2 w-2 rounded-full bg-primary" />
 
-                Nigerian Karate Federation
+                Karate Federation of Nigeria (KFN) Federation
               </div>
 
               <!-- Description -->
@@ -510,7 +510,7 @@ const statusConfig = computed(() => {
         <p
           class="mx-auto mt-3 max-w-md text-sm leading-7 text-muted"
         >
-          Exciting Nigerian Karate Federation competitions and events will
+          Exciting Karate Federation of Nigeria (KFN)competitions and events will
           appear here soon.
         </p>
 

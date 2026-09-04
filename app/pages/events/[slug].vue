@@ -75,7 +75,7 @@ const eventDescription = computed(() => {
 
   return (
     event.value.description ||
-    `Stay connected with ${event.value.title}, one of the Nigerian Karate Federation's official events bringing together athletes, coaches, officials and karate supporters.`
+    `Stay connected with ${event.value.title}, one of the Karate Federation of Nigeria (KFN) Federation's official events bringing together athletes, coaches, officials and karate supporters.`
   )
 })
 
@@ -316,7 +316,7 @@ const shareEvent = async () => {
                 <p
                   class="text-[10px] font-black uppercase tracking-[0.2em] text-primary"
                 >
-                  Nigerian Karate Federation
+                  Karate Federation of Nigeria (KFN) Federation
                 </p>
 
                 <h2

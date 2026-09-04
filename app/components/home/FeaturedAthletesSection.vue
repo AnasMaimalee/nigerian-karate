@@ -23,7 +23,7 @@ interface Athlete {
 const athletes: Athlete[] = [
   {
     id: 1,
-    name: 'Nigerian Karate Athlete',
+    name: 'Karate Federation of Nigeria (KFN) Athlete',
     slug: 'nigerian-karate-athlete-1',
     image: 'https://images.unsplash.com/photo-1555597673-b21d5c935865?auto=format&fit=crop&w=900&q=80',
     state: 'Lagos',
@@ -92,7 +92,7 @@ const athletes: Athlete[] = [
           >
             <Medal :size="14" />
 
-            Elite Nigerian Karate
+            Elite Karate Federation of Nigeria (KFN)
           </div>
 
           <h2
@@ -106,7 +106,7 @@ const athletes: Athlete[] = [
 
           <p class="mt-5 max-w-xl text-sm leading-7 text-muted sm:text-base">
             Discover the discipline, determination and excellence of athletes
-            representing Nigerian karate across national and international competitions.
+            representing Karate Federation of Nigeria (KFN) across national and international competitions.
           </p>
         </div>
 
@@ -230,7 +230,7 @@ const athletes: Athlete[] = [
         </h3>
 
         <p class="mx-auto mt-3 max-w-md text-sm leading-7 text-muted">
-          Nigerian Karate Federation athlete profiles will appear here soon.
+          Karate Federation of Nigeria (KFN)athlete profiles will appear here soon.
         </p>
       </div>
 
@@ -248,7 +248,7 @@ const athletes: Athlete[] = [
 
           <div>
             <h3 class="text-lg font-black text-foreground">
-              The Future Of Nigerian Karate
+              The Future Of Karate Federation of Nigeria (KFN)
             </h3>
 
             <p class="mt-1 text-sm text-muted">

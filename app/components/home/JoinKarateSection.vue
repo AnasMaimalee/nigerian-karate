@@ -23,7 +23,7 @@ import { images } from '~/data/images'
 
           <img
             :src="images.backgrounds.darkKarate"
-            alt="Nigerian karate athletes"
+            alt="Karate Federation of Nigeria (KFN) athletes"
             class="h-full w-full object-cover opacity-20 transition duration-1000 hover:scale-105"
           >
 
@@ -89,7 +89,7 @@ import { images } from '~/data/images'
                 class="mt-7 max-w-2xl text-sm leading-8 text-white/65 sm:text-base lg:text-lg"
               >
                 Whether you are an athlete, coach, club, official or karate enthusiast,
-                there is a place for you in the future of Nigerian karate.
+                there is a place for you in the future of Karate Federation of Nigeria (KFN).
               </p>
 
               <!-- Action Buttons -->
@@ -191,7 +191,7 @@ import { images } from '~/data/images'
                   <span
                     class="rounded-full border border-white/10 bg-white/10 px-3 py-1 text-[9px] font-black uppercase tracking-widest text-white/60"
                   >
-                    Nigerian Karate
+                    Karate Federation of Nigeria (KFN)
                   </span>
 
                 </div>

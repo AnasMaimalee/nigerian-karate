@@ -1,7 +1,7 @@
 import { images } from './images'
 
 export const federation = {
-  name: 'Nigerian Karate Federation',
+  name: 'Karate Federation of Nigeria (KFN) Federation',
   shortName: 'NKF',
 
   tagline: 'Forged By Discipline. United By Karate.',
@@ -40,7 +40,7 @@ export const federation = {
 
   vision: {
     title: 'Our Vision',
-    description: 'To establish Nigerian karate as a globally respected sporting force and inspire future generations through discipline and excellence.'
+    description: 'To establish Karate Federation of Nigeria (KFN) as a globally respected sporting force and inspire future generations through discipline and excellence.'
   },
 
   values: [

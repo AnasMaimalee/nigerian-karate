@@ -144,7 +144,7 @@ const countdown = computed(() => {
           <span
             class="text-[10px] font-black uppercase tracking-[0.24em] text-green-300"
           >
-            Nigerian Karate Federation
+            Karate Federation of Nigeria (KFN) Federation
           </span>
         </div>
 
@@ -168,7 +168,7 @@ const countdown = computed(() => {
           class="mt-8 max-w-xl text-base leading-8 text-white/60 sm:text-lg"
         >
           Follow championships, tournaments, seminars and official
-          Nigerian Karate Federation events happening across the country.
+          Karate Federation of Nigeria (KFN)events happening across the country.
         </p>
 
         <!-- BUTTONS -->

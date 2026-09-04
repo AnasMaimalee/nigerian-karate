@@ -26,7 +26,7 @@ defineProps<{
           class="mb-6 inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/10 px-4 py-2 text-sm font-medium text-green-100 backdrop-blur"
         >
           <span class="text-lg">📚</span>
-          Nigerian Karate Federation
+          Karate Federation of Nigeria (KFN) Federation
         </div>
 
         <h1

@@ -17,7 +17,7 @@ import {
 } from 'lucide-vue-next'
 
 definePageMeta({
-  title: 'News Article | Nigerian Karate Federation'
+  title: 'News Article | Karate Federation of Nigeria (KFN) Federation'
 })
 
 interface NewsItem {
@@ -45,25 +45,25 @@ const route = useRoute()
 const newsItems: NewsItem[] = [
   {
     id: 1,
-    title: 'Nigerian Karate Federation Announces New Era of Athlete Development',
+    title: 'Karate Federation of Nigeria (KFN)Announces New Era of Athlete Development',
     slug: 'new-era-athlete-development',
     category: 'Federation',
     image:
       'https://images.unsplash.com/photo-1555597673-b21d5c935865?auto=format&fit=crop&w=1800&q=90',
     excerpt:
-      'The Nigerian Karate Federation continues its commitment to developing elite athletes, strengthening grassroots programmes and creating new opportunities for karate practitioners across Nigeria.',
+      'The Karate Federation of Nigeria (KFN)continues its commitment to developing elite athletes, strengthening grassroots programmes and creating new opportunities for karate practitioners across Nigeria.',
     date: '2026-08-28',
     readTime: '4 min',
     reads: 2840,
     likes: 326,
     content: [
-      'The Nigerian Karate Federation has announced a renewed commitment to athlete development as part of its long-term vision for strengthening karate across the country.',
+      'The Karate Federation of Nigeria (KFN)has announced a renewed commitment to athlete development as part of its long-term vision for strengthening karate across the country.',
 
       'The initiative focuses on creating better opportunities for athletes at different levels of development, from grassroots programmes to elite national competition.',
 
-      'Through improved training structures, technical development programmes and stronger cooperation with coaches and state associations, the federation aims to create a sustainable pathway for Nigerian karate athletes.',
+      'Through improved training structures, technical development programmes and stronger cooperation with coaches and state associations, the federation aims to create a sustainable pathway for Karate Federation of Nigeria (KFN) athletes.',
 
-      'Officials believe that consistent athlete development is essential to building a stronger future for Nigerian karate and improving the country’s presence in international competition.',
+      'Officials believe that consistent athlete development is essential to building a stronger future for Karate Federation of Nigeria (KFN) and improving the country’s presence in international competition.',
 
       'The federation will continue working with athletes, coaches, technical officials and stakeholders to identify opportunities that support the growth of the sport across Nigeria.'
     ]
@@ -95,25 +95,25 @@ const newsItems: NewsItem[] = [
 
   {
     id: 3,
-    title: 'Young Nigerian Karate Athletes Shine at Development Camp',
+    title: 'Young Karate Federation of Nigeria (KFN) Athletes Shine at Development Camp',
     slug: 'young-athletes-development-camp',
     category: 'Athletes',
     image:
       'https://images.unsplash.com/photo-1554284126-aa88f22d8b74?auto=format&fit=crop&w=1800&q=90',
     excerpt:
-      'The next generation of Nigerian karate athletes continues to demonstrate discipline, determination and remarkable potential.',
+      'The next generation of Karate Federation of Nigeria (KFN) athletes continues to demonstrate discipline, determination and remarkable potential.',
     date: '2026-08-20',
     readTime: '5 min',
     reads: 1750,
     likes: 188,
     content: [
-      'Young Nigerian karate athletes demonstrated impressive discipline and determination during a recent development programme.',
+      'Young Karate Federation of Nigeria (KFN) athletes demonstrated impressive discipline and determination during a recent development programme.',
 
       'The camp focused on improving technical skills, physical preparation and understanding of competitive karate.',
 
       'Coaches worked closely with participants to help identify areas for improvement while encouraging the values of discipline, respect and perseverance.',
 
-      'The development of young athletes remains an important part of the federation’s vision for building a sustainable future for Nigerian karate.'
+      'The development of young athletes remains an important part of the federation’s vision for building a sustainable future for Karate Federation of Nigeria (KFN).'
     ]
   },
 
@@ -131,7 +131,7 @@ const newsItems: NewsItem[] = [
     reads: 2100,
     likes: 241,
     content: [
-      'The Nigerian Karate Federation continues to strengthen technical development programmes across the country.',
+      'The Karate Federation of Nigeria (KFN)continues to strengthen technical development programmes across the country.',
 
       'New initiatives are focused on supporting coaches, athletes and technical officials with improved knowledge and practical experience.',
 
@@ -143,7 +143,7 @@ const newsItems: NewsItem[] = [
 
   {
     id: 5,
-    title: 'Nigerian Karate Delegation Prepares for International Competition',
+    title: 'Karate Federation of Nigeria (KFN) Delegation Prepares for International Competition',
     slug: 'nigerian-karate-international-competition',
     category: 'International',
     image:
@@ -161,7 +161,7 @@ const newsItems: NewsItem[] = [
 
       'Representing Nigeria internationally remains an important responsibility for the athletes and the federation.',
 
-      'The competition will provide another opportunity for Nigerian karate to demonstrate its continued growth on the international stage.'
+      'The competition will provide another opportunity for Karate Federation of Nigeria (KFN) to demonstrate its continued growth on the international stage.'
     ]
   },
 
@@ -173,17 +173,17 @@ const newsItems: NewsItem[] = [
     image:
       'https://images.unsplash.com/photo-1517836357463-d25dfeac3438?auto=format&fit=crop&w=1800&q=90',
     excerpt:
-      'The Nigerian Karate Federation continues to expand opportunities for young athletes through grassroots development.',
+      'The Karate Federation of Nigeria (KFN)continues to expand opportunities for young athletes through grassroots development.',
     date: '2026-08-08',
     readTime: '3 min',
     reads: 2240,
     likes: 271,
     content: [
-      'The Nigerian Karate Federation has announced a new initiative focused on strengthening grassroots karate development across the country.',
+      'The Karate Federation of Nigeria (KFN)has announced a new initiative focused on strengthening grassroots karate development across the country.',
 
       'The programme aims to introduce more young people to karate while creating stronger development pathways for athletes with competitive potential.',
 
-      'Grassroots development remains one of the most important foundations for the future growth of Nigerian karate.',
+      'Grassroots development remains one of the most important foundations for the future growth of Karate Federation of Nigeria (KFN).',
 
       'The federation will lore.100  continue working with coaches, clubs and state associations to create more opportunities for participation and athlete development.',
       'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi',
@@ -260,7 +260,7 @@ const newsItems: NewsItem[] = [
 
       'International cooperation provides important opportunities for athletes, coaches and technical officials.',
 
-      'The federation remains committed to expanding opportunities that allow Nigerian karate practitioners to participate in international development and competition.',
+      'The federation remains committed to expanding opportunities that allow Karate Federation of Nigeria (KFN) practitioners to participate in international development and competition.',
 
       'These relationships will continue playing an important role in the future growth of karate in Nigeria.'
     ]
@@ -286,7 +286,7 @@ const newsItems: NewsItem[] = [
 
       'Technical officials play an important role in ensuring fair and professionally managed competitions.',
 
-      'The workshop forms part of continuing efforts to strengthen technical standards within Nigerian karate.'
+      'The workshop forms part of continuing efforts to strengthen technical standards within Karate Federation of Nigeria (KFN).'
     ]
   }
 ]
@@ -423,7 +423,7 @@ const copyLink = async () => {
 }
 
 useHead(() => ({
-  title: `${article.value?.title} | Nigerian Karate Federation`,
+  title: `${article.value?.title} | Karate Federation of Nigeria (KFN) Federation`,
   meta: [
     {
       name: 'description',
@@ -513,7 +513,7 @@ useHead(() => ({
               <span
                 class="text-[10px] font-bold uppercase tracking-[0.2em] text-white/40"
               >
-                Nigerian Karate Federation
+                Karate Federation of Nigeria (KFN) Federation
               </span>
             </div>
   
@@ -614,7 +614,7 @@ useHead(() => ({
               <span
                 class="text-[10px] font-black uppercase tracking-[0.25em] text-white/50"
               >
-                Nigerian Karate Federation News
+                Karate Federation of Nigeria (KFN)News
               </span>
             </div>
           </div>
@@ -680,7 +680,7 @@ useHead(() => ({
               <p
                 class="mt-2 text-sm leading-6 text-[#66706B]"
               >
-                Follow the latest updates from Nigerian karate.
+                Follow the latest updates from Karate Federation of Nigeria (KFN).
               </p>
             </div>
   
@@ -852,7 +852,7 @@ useHead(() => ({
               <p
                 class="mt-5 text-sm leading-7 text-white/50 sm:text-base"
               >
-                Discover more stories, athlete updates and developments from the Nigerian Karate Federation.
+                Discover more stories, athlete updates and developments from the Karate Federation of Nigeria (KFN) Federation.
               </p>
             </div>
   
@@ -906,13 +906,13 @@ useHead(() => ({
                 <h3
                   class="font-black"
                 >
-                  Nigerian Karate Federation News
+                  Karate Federation of Nigeria (KFN)News
                 </h3>
   
                 <p
                   class="mt-1 text-sm text-white/40"
                 >
-                  Stay connected with Nigerian karate.
+                  Stay connected with Karate Federation of Nigeria (KFN).
                 </p>
               </div>
             </div>

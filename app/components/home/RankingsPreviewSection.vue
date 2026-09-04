@@ -179,7 +179,7 @@ const movementLabel = (movement?: number) => {
             class="mt-7 max-w-2xl text-sm leading-8 text-slate-600 sm:text-base lg:text-lg"
           >
             Celebrating the athletes setting the standard for performance,
-            discipline and excellence across Nigerian karate competitions.
+            discipline and excellence across Karate Federation of Nigeria (KFN) competitions.
           </p>
         </div>
 
@@ -576,7 +576,7 @@ const movementLabel = (movement?: number) => {
           <p
             class="mx-auto mt-4 max-w-md text-sm leading-7 text-slate-500"
           >
-            Official Nigerian Karate Federation rankings and athlete performance
+            Official Karate Federation of Nigeria (KFN)rankings and athlete performance
             data will appear here as competition results are updated.
           </p>
 

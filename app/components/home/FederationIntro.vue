@@ -49,7 +49,7 @@ const fallbackEvent: EventItem = {
   slug: 'national-karate-championship-2026',
   title: 'Nigeria National Karate Championship 2026',
   description:
-    'Nigeria’s leading karate athletes come together for an exciting national championship celebrating discipline, excellence and the future of Nigerian karate.',
+    'Nigeria’s leading karate athletes come together for an exciting national championship celebrating discipline, excellence and the future of Karate Federation of Nigeria (KFN).',
   location: 'Abuja, Nigeria',
   venue: 'National Indoor Sports Hall',
   date: '2026-10-15T09:00:00',
@@ -272,7 +272,7 @@ const showLiveIndicator = computed(() => {
           <p
             class="mt-5 max-w-xl text-sm leading-7 text-slate-600 sm:text-base"
           >
-            Follow the next major moment in Nigerian karate and stay connected
+            Follow the next major moment in Karate Federation of Nigeria (KFN) and stay connected
             with national competitions, championships and federation events.
           </p>
         </div>
@@ -569,7 +569,7 @@ const showLiveIndicator = computed(() => {
         <p
           class="text-xs leading-6 text-slate-500"
         >
-          Stay connected with the Nigerian Karate Federation for official
+          Stay connected with the Karate Federation of Nigeria (KFN)for official
           competition schedules and event announcements.
         </p>
 

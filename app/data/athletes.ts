@@ -23,7 +23,7 @@ export const athletes = [
     rankingChange: 2,
     featured: true,
     accent: 'primary',
-    bio: 'A highly disciplined Nigerian karate athlete competing at senior national and international levels.',
+    bio: 'A highly disciplined Karate Federation of Nigeria (KFN) athlete competing at senior national and international levels.',
     achievements: ['National Kumite Champion', 'West African Karate Medalist', 'Nigeria National Team Athlete']
   },
   {
@@ -48,7 +48,7 @@ export const athletes = [
     rankingChange: 1,
     featured: true,
     accent: 'gold',
-    bio: 'An elite Nigerian karate athlete known for speed, precision and competitive discipline.',
+    bio: 'An elite Karate Federation of Nigeria (KFN) athlete known for speed, precision and competitive discipline.',
     achievements: ['National Champion', 'African Karate Championship Participant', 'Multiple Gold Medal Winner']
   },
   {
@@ -73,7 +73,7 @@ export const athletes = [
     rankingChange: 0,
     featured: true,
     accent: 'primary',
-    bio: 'A technical kata athlete representing the next generation of Nigerian karate excellence.',
+    bio: 'A technical kata athlete representing the next generation of Karate Federation of Nigeria (KFN) excellence.',
     achievements: ['National Kata Champion', 'International Karate Competitor', 'Multiple National Medalist']
   },
   {

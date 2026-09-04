@@ -82,7 +82,7 @@ import {
               <p
                 class="mt-7 max-w-2xl text-base leading-8 text-white/60 sm:text-lg"
               >
-                Explore Nigerian karate, discover our athletes, follow national
+                Explore Karate Federation of Nigeria (KFN), discover our athletes, follow national
                 competitions and learn more about the systems shaping the
                 future of the sport.
               </p>
@@ -224,7 +224,7 @@ import {
             <p
               class="text-xs font-medium text-white/40"
             >
-              Strengthening Nigerian karate through unity, discipline and
+              Strengthening Karate Federation of Nigeria (KFN) through unity, discipline and
               excellence.
             </p>
 

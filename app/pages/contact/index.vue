@@ -109,7 +109,7 @@ const submitForm = async () => {
             <span
               class="text-[10px] font-black uppercase tracking-[0.22em] text-[#f0d88f]"
             >
-              Nigerian Karate Federation
+              Karate Federation of Nigeria (KFN) Federation
             </span>
           </div>
 
@@ -131,7 +131,7 @@ const submitForm = async () => {
             class="mt-8 max-w-2xl text-base font-medium leading-8 text-white sm:text-lg"
           >
             Have a question, enquiry or important information to share?
-            Reach out to the Nigerian Karate Federation and our team
+            Reach out to the Karate Federation of Nigeria (KFN)and our team
             will be happy to assist you.
           </p>
 
@@ -352,7 +352,7 @@ const submitForm = async () => {
                   <p
                     class="mt-4 text-xs font-black uppercase tracking-[0.16em] text-[#647168]"
                   >
-                    Nigerian Karate Federation
+                    Karate Federation of Nigeria (KFN) Federation
                   </p>
                 </div>
 
@@ -373,7 +373,7 @@ const submitForm = async () => {
               <h3
                 class="mt-3 text-xl font-black"
               >
-                Stay connected with Nigerian karate.
+                Stay connected with Karate Federation of Nigeria (KFN).
               </h3>
 
               <div class="mt-5 flex flex-wrap gap-3">
@@ -431,7 +431,7 @@ const submitForm = async () => {
                 <p
                   class="mt-1 text-sm font-medium leading-6 text-green-800"
                 >
-                  Thank you for contacting the Nigerian Karate Federation.
+                  Thank you for contacting the Karate Federation of Nigeria (KFN) Federation.
                   We will get back to you as soon as possible.
                 </p>
               </div>

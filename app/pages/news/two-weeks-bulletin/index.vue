@@ -7,7 +7,7 @@ import {
 } from 'lucide-vue-next'
 
 useHead({
-  title: 'Two Weeks Bulletin | Nigerian Karate Federation'
+  title: 'Two Weeks Bulletin | Karate Federation of Nigeria (KFN) Federation'
 })
 
 const search = ref('')
@@ -18,7 +18,7 @@ const bulletins = [
     title: 'NKF Two Weeks Bulletin',
     period: 'Current Bulletin',
     description:
-      'Official updates, activities, competitions and developments from across the Nigerian Karate Federation.',
+      'Official updates, activities, competitions and developments from across the Karate Federation of Nigeria (KFN) Federation.',
     date: 'Latest Publication'
   },
   {
@@ -92,7 +92,7 @@ const filteredBulletins = computed(() => {
           class="mt-7 max-w-2xl text-base leading-8 text-white/55"
         >
           Stay informed with important activities, announcements,
-          championships and developments from the Nigerian Karate Federation.
+          championships and developments from the Karate Federation of Nigeria (KFN) Federation.
         </p>
 
       </div>

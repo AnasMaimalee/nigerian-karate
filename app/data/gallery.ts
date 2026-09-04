@@ -61,7 +61,7 @@ export const galleryItems = [
     title: 'Future Champions',
     image: images.gallery.youth1,
     category: 'Youth',
-    description: 'The next generation of Nigerian karate athletes.',
+    description: 'The next generation of Karate Federation of Nigeria (KFN) athletes.',
     imagePosition: 'center',
     imageEffect: 'zoom',
     overlay: 'from-transparent to-black/85',

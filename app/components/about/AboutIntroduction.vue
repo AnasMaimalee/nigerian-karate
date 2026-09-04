@@ -53,7 +53,7 @@ import {
           <p
             class="text-xl font-bold leading-9 text-slate-900 sm:text-2xl"
           >
-            The Nigerian Karate Federation serves as the national platform
+            The Karate Federation of Nigeria (KFN)serves as the national platform
             for the development, organisation and advancement of karate
             across Nigeria.
           </p>
@@ -72,7 +72,7 @@ import {
             From grassroots development to national championships and
             international representation, the Federation is committed to
             creating a sustainable pathway for the next generation of
-            Nigerian karate athletes.
+            Karate Federation of Nigeria (KFN) athletes.
           </p>
 
           <!-- FEATURES -->

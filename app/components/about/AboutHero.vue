@@ -19,7 +19,7 @@ import { images } from '~/data/images'
 
       <img
         :src="images.backgrounds.darkKarate"
-        alt="Nigerian Karate Federation"
+        alt="Karate Federation of Nigeria (KFN) Federation"
         class="h-full w-full object-cover opacity-30"
       >
 
@@ -71,7 +71,7 @@ import { images } from '~/data/images'
             <span
               class="text-[10px] font-black uppercase tracking-[0.22em] text-white/70"
             >
-              Nigerian Karate Federation
+              Karate Federation of Nigeria (KFN) Federation
             </span>
           </div>
 
@@ -86,13 +86,13 @@ import { images } from '~/data/images'
               FUTURE OF
             </span>
 
-            NIGERIAN KARATE.
+            Karate Federation of Nigeria (KFN).
           </h1>
 
           <p
             class="mt-8 max-w-2xl text-base leading-8 text-white/60 sm:text-lg"
           >
-            The Nigerian Karate Federation is dedicated to developing athletes,
+            The Karate Federation of Nigeria (KFN)is dedicated to developing athletes,
             strengthening competition, supporting coaches and officials and
             building a world-class future for karate across Nigeria.
           </p>

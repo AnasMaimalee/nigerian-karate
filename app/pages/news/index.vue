@@ -3,7 +3,7 @@ import { computed, ref } from 'vue'
 import { Search, X, Newspaper } from 'lucide-vue-next'
 
 definePageMeta({
-  title: 'News | Nigerian Karate Federation'
+  title: 'News | Karate Federation of Nigeria (KFN) Federation'
 })
 
 type NewsCategory =
@@ -68,13 +68,13 @@ const categories: {
 const featuredNews: NewsItem = {
   id: 1,
   title:
-    'Nigerian Karate Federation Announces New Era of Athlete Development',
+    'Karate Federation of Nigeria (KFN)Announces New Era of Athlete Development',
   slug: 'new-era-athlete-development',
   category: 'Federation',
   image:
     'https://images.unsplash.com/photo-1555597673-b21d5c935865?auto=format&fit=crop&w=1600&q=90',
   excerpt:
-    'The Nigerian Karate Federation continues its commitment to developing elite athletes, strengthening grassroots programmes and creating new opportunities for karate practitioners across Nigeria.',
+    'The Karate Federation of Nigeria (KFN)continues its commitment to developing elite athletes, strengthening grassroots programmes and creating new opportunities for karate practitioners across Nigeria.',
   date: '2026-08-28',
   readTime: '4 min',
   featured: true
@@ -103,13 +103,13 @@ const newsItems: NewsItem[] = [
   {
     id: 3,
     title:
-      'Young Nigerian Karate Athletes Shine at Development Camp',
+      'Young Karate Federation of Nigeria (KFN) Athletes Shine at Development Camp',
     slug: 'nkf-expands-grassroots-development',
     category: 'Athletes',
     image:
       'https://images.unsplash.com/photo-1554284126-aa88f22d8b74?auto=format&fit=crop&w=1000&q=85',
     excerpt:
-      'The next generation of Nigerian karate athletes continues to demonstrate discipline, determination and remarkable potential.',
+      'The next generation of Karate Federation of Nigeria (KFN) athletes continues to demonstrate discipline, determination and remarkable potential.',
     date: '2026-08-20',
     readTime: '5 min'
   },
@@ -129,7 +129,7 @@ const newsItems: NewsItem[] = [
   {
     id: 5,
     title:
-      'Nigerian Karate Delegation Prepares for International Competition',
+      'Karate Federation of Nigeria (KFN) Delegation Prepares for International Competition',
     slug: 'nkf-expands-grassroots-development',
     category: 'International',
     image:
@@ -148,7 +148,7 @@ const newsItems: NewsItem[] = [
     image:
       'https://images.unsplash.com/photo-1517836357463-d25dfeac3438?auto=format&fit=crop&w=1000&q=85',
     excerpt:
-      'The Nigerian Karate Federation continues to expand opportunities for young athletes through grassroots development.',
+      'The Karate Federation of Nigeria (KFN)continues to expand opportunities for young athletes through grassroots development.',
     date: '2026-08-08',
     readTime: '3 min'
   },
@@ -311,7 +311,7 @@ const clearFilters = () => {
         <span
           class="text-[10px] font-black uppercase tracking-[0.22em] text-[#e5ca83]"
         >
-          Nigerian Karate Federation
+          Karate Federation of Nigeria (KFN) Federation
         </span>
       </div>
 
@@ -334,7 +334,7 @@ const clearFilters = () => {
       >
         Discover the latest news, championship updates, athlete
         achievements and important developments shaping the future of
-        Nigerian karate.
+        Karate Federation of Nigeria (KFN).
       </p>
 
       <!-- BOTTOM INFO -->
@@ -376,8 +376,8 @@ const clearFilters = () => {
 
         <SectionHeading
           eyebrow="Featured Story"
-          title="Inside Nigerian Karate"
-          description="The latest important story from the Nigerian Karate Federation."
+          title="Inside Karate Federation of Nigeria (KFN)"
+          description="The latest important story from the Karate Federation of Nigeria (KFN) Federation."
         />
 
         <div class="mt-10">
@@ -411,7 +411,7 @@ const clearFilters = () => {
   <SectionHeading
     eyebrow="News Centre"
     title="Latest Updates"
-    description="Explore the latest federation news, athlete stories, competitions and developments shaping Nigerian karate."
+    description="Explore the latest federation news, athlete stories, competitions and developments shaping Karate Federation of Nigeria (KFN)."
   />
 
   <!-- TOTAL RECORDS -->

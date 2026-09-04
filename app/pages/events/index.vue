@@ -75,7 +75,7 @@ const filteredEvents = computed(() => {
           <p
             class="mt-6 max-w-2xl text-base leading-8 text-slate-600 sm:text-lg"
           >
-            Stay connected with Nigerian karate competitions,
+            Stay connected with Karate Federation of Nigeria (KFN) competitions,
             championships, seminars and major federation events.
           </p>
         </div>
@@ -150,7 +150,7 @@ const filteredEvents = computed(() => {
 
           <p class="mt-3 max-w-md text-sm leading-7 text-slate-500">
             Try changing your filters or clearing your search to discover
-            upcoming Nigerian Karate Federation events.
+            upcoming Karate Federation of Nigeria (KFN)events.
           </p>
 
           <button

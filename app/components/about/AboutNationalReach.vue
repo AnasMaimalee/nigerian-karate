@@ -66,7 +66,7 @@ const locations = [
         <p
           class="max-w-xl text-base leading-8 text-slate-600"
         >
-          Nigerian karate is built through communities, state associations,
+          Karate Federation of Nigeria (KFN) is built through communities, state associations,
           clubs and athletes working together across the country.
         </p>
 
@@ -193,7 +193,7 @@ const locations = [
           </h3>
 
           <p class="mt-3 text-sm leading-7 text-white/50">
-            Bringing Nigerian karate together through a stronger national
+            Bringing Karate Federation of Nigeria (KFN) together through a stronger national
             federation system.
           </p>
         </div>

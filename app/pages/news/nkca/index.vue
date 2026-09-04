@@ -14,7 +14,7 @@ import {
 } from 'lucide-vue-next'
 
 useHead({
-  title: 'NKCA | Nigerian Karate Federation'
+  title: 'NKCA | Karate Federation of Nigeria (KFN) Federation'
 })
 
 const initiatives = [
@@ -26,7 +26,7 @@ const initiatives = [
   {
     title: 'Technical Excellence',
     description:
-      'Promoting high technical standards, education and continuous development within Nigerian karate.'
+      'Promoting high technical standards, education and continuous development within Karate Federation of Nigeria (KFN).'
   },
   {
     title: 'National Collaboration',
@@ -105,7 +105,7 @@ const initiatives = [
                 class="h-1.5 w-1.5 animate-pulse rounded-full bg-[#4ade80]"
               />
 
-              Nigerian Karate Community
+              Karate Federation of Nigeria (KFN) Community
             </span>
 
 
@@ -126,7 +126,7 @@ const initiatives = [
               class="mt-8 max-w-2xl text-base leading-8 text-white/60 sm:text-lg"
             >
               A platform supporting collaboration, development and stronger
-              connections across the Nigerian karate community.
+              connections across the Karate Federation of Nigeria (KFN) community.
             </p>
 
 
@@ -292,7 +292,7 @@ const initiatives = [
             class="text-lg leading-9 text-slate-600"
           >
             NKCA represents an important space for connection, collaboration
-            and shared development within the Nigerian karate ecosystem.
+            and shared development within the Karate Federation of Nigeria (KFN) ecosystem.
           </p>
 
 
@@ -375,7 +375,7 @@ const initiatives = [
             <h2
               class="mt-5 max-w-3xl text-3xl font-black leading-tight sm:text-4xl"
             >
-              Supporting the people and institutions shaping Nigerian karate.
+              Supporting the people and institutions shaping Karate Federation of Nigeria (KFN).
             </h2>
 
           </div>
@@ -467,7 +467,7 @@ const initiatives = [
           <h2
             class="mt-5 text-3xl font-black tracking-tight text-slate-950 sm:text-4xl"
           >
-            Connect with the Nigerian Karate community.
+            Connect with the Karate Federation of Nigeria (KFN) community.
           </h2>
 
 
@@ -475,7 +475,7 @@ const initiatives = [
             class="mt-5 max-w-xl text-sm leading-7 text-slate-500"
           >
             For enquiries, collaboration and official communication, connect
-            through the Nigerian Karate Federation.
+            through the Karate Federation of Nigeria (KFN) Federation.
           </p>
 
 
@@ -530,7 +530,7 @@ const initiatives = [
             <h3
               class="mt-8 text-2xl font-black"
             >
-              Nigerian Karate Federation
+              Karate Federation of Nigeria (KFN) Federation
             </h3>
 
 

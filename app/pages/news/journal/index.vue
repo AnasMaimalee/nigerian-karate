@@ -10,7 +10,7 @@ import {
 } from 'lucide-vue-next'
 
 useHead({
-  title: 'Nigerian Karate Journal | Nigerian Karate Federation'
+  title: 'Karate Federation of Nigeria (KFN) Journal | Karate Federation of Nigeria (KFN) Federation'
 })
 
 const search = ref('')
@@ -20,7 +20,7 @@ const editions = [
     id: 1,
     volume: 'Volume 01',
     issue: 'Issue 01',
-    title: 'The Future of Nigerian Karate',
+    title: 'The Future of Karate Federation of Nigeria (KFN)',
     description:
       'Stories, developments, achievements and important conversations shaping the future of karate in Nigeria.',
     date: 'Latest Edition',
@@ -33,7 +33,7 @@ const editions = [
     issue: 'Issue 02',
     title: 'Championship & Athlete Development',
     description:
-      'A closer look at competitions, athlete development and the future generation of Nigerian karate.',
+      'A closer look at competitions, athlete development and the future generation of Karate Federation of Nigeria (KFN).',
     date: 'Coming Soon',
     image: '/images/hero/logo.jpeg'
   },
@@ -43,7 +43,7 @@ const editions = [
     issue: 'Issue 03',
     title: 'Leadership, Governance & Growth',
     description:
-      'Exploring leadership, governance and the continued development of Nigerian karate.',
+      'Exploring leadership, governance and the continued development of Karate Federation of Nigeria (KFN).',
     date: 'Coming Soon',
     image: '/images/hero/logo.jpeg'
   }
@@ -119,7 +119,7 @@ const filteredEditions = computed(() => {
             <p
               class="mt-8 max-w-2xl text-base leading-8 text-white/55 sm:text-lg"
             >
-              The official publication of the Nigerian Karate Federation —
+              The official publication of the Karate Federation of Nigeria (KFN)—
               documenting our athletes, championships, leadership,
               development and the people shaping the future of Nigerian
               karate.
@@ -178,7 +178,7 @@ const filteredEditions = computed(() => {
 
               <img
                 src="/images/hero/logo.jpeg"
-                alt="Nigerian Karate Federation"
+                alt="Karate Federation of Nigeria (KFN) Federation"
                 class="mx-auto mt-10 h-28 w-28 rounded-3xl object-contain"
               >
 
@@ -196,7 +196,7 @@ const filteredEditions = computed(() => {
                   THE FUTURE OF
 
                   <span class="block text-emerald-300">
-                    NIGERIAN KARATE.
+                    Karate Federation of Nigeria (KFN).
                   </span>
                 </h2>
 
@@ -208,7 +208,7 @@ const filteredEditions = computed(() => {
                 <span
                   class="text-[8px] font-black uppercase tracking-[0.2em] text-white/40"
                 >
-                  Nigerian Karate Federation
+                  Karate Federation of Nigeria (KFN) Federation
                 </span>
               </div>
 
@@ -254,7 +254,7 @@ const filteredEditions = computed(() => {
             class="mt-4 max-w-xl text-sm leading-7 text-slate-500"
           >
             Explore official publications, stories and insights from the
-            Nigerian Karate Federation.
+            Karate Federation of Nigeria (KFN) Federation.
           </p>
 
         </div>

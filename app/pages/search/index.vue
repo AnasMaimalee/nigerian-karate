@@ -46,7 +46,7 @@ const categories = [
 const searchResults = [
    {
     id: 2,
-    title: 'Nigerian Karate Athletes Prepare for International Competition',
+    title: 'Karate Federation of Nigeria (KFN) Athletes Prepare for International Competition',
     description:
       'National team athletes continue their preparation ahead of major international competitions.',
     type: 'news',
@@ -59,7 +59,7 @@ const searchResults = [
     id: 4,
     title: 'Elite Kumite Competition Highlights',
     description:
-      'Watch exciting moments and performances from elite Nigerian karate competitions.',
+      'Watch exciting moments and performances from elite Karate Federation of Nigeria (KFN) competitions.',
     type: 'videos',
     label: 'Video',
     image:
@@ -68,7 +68,7 @@ const searchResults = [
   },
   {
     id: 2,
-    title: 'Nigerian Karate Athletes Prepare for International Competition',
+    title: 'Karate Federation of Nigeria (KFN) Athletes Prepare for International Competition',
     description:
       'National team athletes continue their preparation ahead of major international competitions.',
     type: 'news',
@@ -90,7 +90,7 @@ const searchResults = [
   },
    {
     id: 2,
-    title: 'Nigerian Karate Athletes Prepare for International Competition',
+    title: 'Karate Federation of Nigeria (KFN) Athletes Prepare for International Competition',
     description:
       'National team athletes continue their preparation ahead of major international competitions.',
     type: 'news',
@@ -112,7 +112,7 @@ const searchResults = [
   },
   {
     id: 2,
-    title: 'Nigerian Karate Athletes Prepare for International Competition',
+    title: 'Karate Federation of Nigeria (KFN) Athletes Prepare for International Competition',
     description:
       'National team athletes continue their preparation ahead of major international competitions.',
     type: 'news',
@@ -136,7 +136,7 @@ const searchResults = [
     id: 4,
     title: 'Elite Kumite Competition Highlights',
     description:
-      'Watch exciting moments and performances from elite Nigerian karate competitions.',
+      'Watch exciting moments and performances from elite Karate Federation of Nigeria (KFN) competitions.',
     type: 'videos',
     label: 'Video',
     image:
@@ -158,7 +158,7 @@ const searchResults = [
     id: 3,
     title: 'National Team Training Camp',
     description:
-      'Powerful moments from training sessions with Nigerian karate athletes.',
+      'Powerful moments from training sessions with Karate Federation of Nigeria (KFN) athletes.',
     type: 'gallery',
     label: 'Gallery',
     image:
@@ -169,7 +169,7 @@ const searchResults = [
     id: 4,
     title: 'Elite Kumite Competition Highlights',
     description:
-      'Watch exciting moments and performances from elite Nigerian karate competitions.',
+      'Watch exciting moments and performances from elite Karate Federation of Nigeria (KFN) competitions.',
     type: 'videos',
     label: 'Video',
     image:
@@ -180,7 +180,7 @@ const searchResults = [
     id: 3,
     title: 'National Team Training Camp',
     description:
-      'Powerful moments from training sessions with Nigerian karate athletes.',
+      'Powerful moments from training sessions with Karate Federation of Nigeria (KFN) athletes.',
     type: 'gallery',
     label: 'Gallery',
     image:
@@ -191,7 +191,7 @@ const searchResults = [
     id: 4,
     title: 'Elite Kumite Competition Highlights',
     description:
-      'Watch exciting moments and performances from elite Nigerian karate competitions.',
+      'Watch exciting moments and performances from elite Karate Federation of Nigeria (KFN) competitions.',
     type: 'videos',
     label: 'Video',
     image:
@@ -202,7 +202,7 @@ const searchResults = [
     id: 3,
     title: 'National Team Training Camp',
     description:
-      'Powerful moments from training sessions with Nigerian karate athletes.',
+      'Powerful moments from training sessions with Karate Federation of Nigeria (KFN) athletes.',
     type: 'gallery',
     label: 'Gallery',
     image:
@@ -224,7 +224,7 @@ const searchResults = [
     id: 3,
     title: 'National Team Training Camp',
     description:
-      'Powerful moments from training sessions with Nigerian karate athletes.',
+      'Powerful moments from training sessions with Karate Federation of Nigeria (KFN) athletes.',
     type: 'gallery',
     label: 'Gallery',
     image:
@@ -315,7 +315,7 @@ const getIcon = (type: string) => {
             <span
               class="text-[10px] font-black uppercase tracking-[0.22em] text-green-200"
             >
-              Search Nigerian Karate
+              Search Karate Federation of Nigeria (KFN)
             </span>
           </div>
 
@@ -397,7 +397,7 @@ const getIcon = (type: string) => {
             <p
             class="mt-4 max-w-xl text-sm font-semibold leading-7 text-[#526058] sm:text-base"
             >
-            Discover news, events, galleries and videos from the Nigerian Karate Federation.
+            Discover news, events, galleries and videos from the Karate Federation of Nigeria (KFN) Federation.
             </p>
 
         </div>

@@ -62,7 +62,7 @@ const socialLinks: SocialLink[] = [
 
 <template>
   <div class="flex flex-wrap items-center gap-2">
-    <a v-for="social in socialLinks" :key="social.name" :href="social.href" :aria-label="`Follow Nigerian Karate Federation on ${social.name}`" target="_blank" rel="noopener noreferrer" :class="['group relative flex h-10 w-10 items-center justify-center overflow-hidden rounded-xl border border-white/10 bg-white/5 text-white/70 transition-all duration-300 hover:-translate-y-1 hover:text-white hover:shadow-lg', social.hoverClass]">
+    <a v-for="social in socialLinks" :key="social.name" :href="social.href" :aria-label="`Follow Karate Federation of Nigeria (KFN)on ${social.name}`" target="_blank" rel="noopener noreferrer" :class="['group relative flex h-10 w-10 items-center justify-center overflow-hidden rounded-xl border border-white/10 bg-white/5 text-white/70 transition-all duration-300 hover:-translate-y-1 hover:text-white hover:shadow-lg', social.hoverClass]">
       <component :is="social.icon" :size="18" stroke-width="2.2" class="relative z-10 transition-transform duration-300 group-hover:scale-110" />
 
       <span class="absolute inset-0 translate-y-full bg-white/10 transition-transform duration-300 group-hover:translate-y-0" />

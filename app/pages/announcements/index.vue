@@ -18,7 +18,7 @@ import {
 } from 'vue'
 
 useHead({
-  title: 'Announcements | Nigerian Karate Federation'
+  title: 'Announcements | Karate Federation of Nigeria (KFN) Federation'
 })
 
 /*
@@ -62,7 +62,7 @@ const announcements = ref([
     id: 1,
     title: 'Registration Now Open for the 2026 Nigerian National Karate Championship',
     excerpt:
-      'The Nigerian Karate Federation announces the official opening of registration for athletes, coaches and state associations participating in the upcoming National Karate Championship.',
+      'The Karate Federation of Nigeria (KFN)announces the official opening of registration for athletes, coaches and state associations participating in the upcoming National Karate Championship.',
     category: 'Championship',
     date: 'September 4, 2026',
     time: '09:30 AM',
@@ -132,7 +132,7 @@ const announcements = ref([
     id: 6,
     title: 'Technical Officials Seminar Scheduled for Abuja',
     excerpt:
-      'The Nigerian Karate Federation will host a technical seminar for referees, judges and competition officials in preparation for future national competitions.',
+      'The Karate Federation of Nigeria (KFN)will host a technical seminar for referees, judges and competition officials in preparation for future national competitions.',
     category: 'Training',
     date: 'August 20, 2026',
     time: '01:45 PM',
@@ -320,7 +320,7 @@ const resetFilters = () => {
           >
             Stay informed with the latest official announcements,
             championship updates, registration notices and important
-            communications from the Nigerian Karate Federation.
+            communications from the Karate Federation of Nigeria (KFN) Federation.
           </p>
 
 
@@ -911,9 +911,9 @@ const resetFilters = () => {
               <p
                 class="mt-5 text-base leading-8 text-slate-600"
               >
-                The Nigerian Karate Federation remains committed to providing
+                The Karate Federation of Nigeria (KFN)remains committed to providing
                 timely and accurate information to athletes, coaches, state
-                associations, officials and members of the Nigerian karate
+                associations, officials and members of the Karate Federation of Nigeria (KFN)
                 community.
               </p>
 

@@ -20,9 +20,9 @@ const newsItem = computed<NewsItem>(() => {
   return props.item ?? {
     id: 'news',
     slug: 'latest-news',
-    title: 'Latest Nigerian Karate News',
+    title: 'Latest Karate Federation of Nigeria (KFN) News',
     excerpt:
-      'Stay informed with the latest news, events and developments from the Nigerian Karate Federation.',
+      'Stay informed with the latest news, events and developments from the Karate Federation of Nigeria (KFN) Federation.',
     date: 'Latest Update',
     category: 'News',
     image: ''
@@ -103,7 +103,7 @@ const newsUrl = computed(() => {
         <h3
           class="mt-4 text-xl font-black leading-tight tracking-tight text-foreground transition group-hover:text-primary"
         >
-          {{ newsItem.title || 'Latest Nigerian Karate News' }}
+          {{ newsItem.title || 'Latest Karate Federation of Nigeria (KFN) News' }}
         </h3>
 
         <!-- Description -->

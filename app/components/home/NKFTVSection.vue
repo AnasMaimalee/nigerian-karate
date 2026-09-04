@@ -29,17 +29,17 @@ interface VideoItem {
 const defaultVideos: VideoItem[] = [
   {
     id: 1,
-    title: 'Nigerian Karate Championship Highlights',
+    title: 'Karate Federation of Nigeria (KFN) Championship Highlights',
     videoId: 'dQw4w9WgXcQ',
     category: 'Championship',
     description:
-      'Watch exciting moments, powerful performances and unforgettable highlights from Nigerian karate competitions.',
+      'Watch exciting moments, powerful performances and unforgettable highlights from Karate Federation of Nigeria (KFN) competitions.',
     views: '12K views',
     duration: '08:24'
   },
   {
     id: 2,
-    title: 'Inside Nigerian Karate Training',
+    title: 'Inside Karate Federation of Nigeria (KFN) Training',
     videoId: 'ScMzIvxBSi4',
     category: 'Training',
     views: '8.4K views',
@@ -217,7 +217,7 @@ const selectVideo = (video: VideoItem) => {
             <span
               class="text-[10px] font-black uppercase tracking-[0.25em] text-[#86efac]"
             >
-              Watch Nigerian Karate
+              Watch Karate Federation of Nigeria (KFN)
             </span>
           </div>
 
@@ -239,7 +239,7 @@ const selectVideo = (video: VideoItem) => {
             class="mt-6 max-w-2xl text-sm leading-8 text-[#a7b5ad] sm:text-base"
           >
             Championship highlights, athlete stories, training sessions and
-            unforgettable moments from Nigerian karate.
+            unforgettable moments from Karate Federation of Nigeria (KFN).
           </p>
         </div>
 
@@ -545,7 +545,7 @@ const selectVideo = (video: VideoItem) => {
         <p
           class="mx-auto mt-3 max-w-md text-sm leading-7 text-[#8d9b92]"
         >
-          Championship highlights, athlete stories and exclusive Nigerian Karate
+          Championship highlights, athlete stories and exclusive Karate Federation of Nigeria (KFN)
           Federation videos will appear here.
         </p>
       </div>

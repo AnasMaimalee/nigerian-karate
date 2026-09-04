@@ -210,7 +210,7 @@ export const useDocuments = () => {
       id: 12,
       title: 'NKF Brand Book',
       description:
-        'Official Nigerian Karate Federation brand identity guidelines.',
+        'Official Karate Federation of Nigeria (KFN)brand identity guidelines.',
       category: 'branding',
       format: 'PDF',
       year: '2026',
@@ -244,7 +244,7 @@ export const useDocuments = () => {
       id: 15,
       title: 'NKF Statutes',
       description:
-        'The statutes governing the Nigerian Karate Federation.',
+        'The statutes governing the Karate Federation of Nigeria (KFN) Federation.',
       category: 'statutes',
       format: 'PDF',
       year: '2026',
@@ -475,7 +475,7 @@ export const useDocuments = () => {
       id: 37,
       title: 'Annual Report 2025',
       description:
-        'Official Nigerian Karate Federation annual report.',
+        'Official Karate Federation of Nigeria (KFN)annual report.',
       category: 'annual-report',
       format: 'PDF',
       year: '2025',
@@ -485,7 +485,7 @@ export const useDocuments = () => {
       id: 38,
       title: 'Annual Report 2024',
       description:
-        'Official Nigerian Karate Federation annual report.',
+        'Official Karate Federation of Nigeria (KFN)annual report.',
       category: 'annual-report',
       format: 'PDF',
       year: '2024',

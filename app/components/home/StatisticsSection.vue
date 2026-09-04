@@ -107,7 +107,7 @@ const iconMap = {
             <span
               class="text-[10px] font-black uppercase tracking-[0.25em] text-emerald-300"
             >
-              Nigerian Karate At A Glance
+              Karate Federation of Nigeria (KFN) At A Glance
             </span>
           </div>
 
@@ -128,7 +128,7 @@ const iconMap = {
           <p
             class="mt-6 max-w-2xl text-sm leading-8 text-slate-400 sm:text-base"
           >
-            From grassroots development to elite competition, Nigerian karate
+            From grassroots development to elite competition, Karate Federation of Nigeria (KFN)
             continues to grow, inspire and compete on the world stage.
           </p>
         </div>
@@ -238,7 +238,7 @@ const iconMap = {
         >
           <span class="h-1.5 w-1.5 rounded-full bg-emerald-400" />
 
-          Nigerian Karate Federation
+          Karate Federation of Nigeria (KFN) Federation
         </div>
       </div>
 

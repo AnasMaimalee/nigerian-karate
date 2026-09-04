@@ -221,7 +221,7 @@ const federationLinks = [
                   <span
                     class="mt-1 block text-emerald-300"
                   >
-                    NIGERIAN KARATE.
+                    Karate Federation of Nigeria (KFN).
                   </span>
                 </h2>
 
@@ -350,7 +350,7 @@ const federationLinks = [
                 <p
                   class="mt-1 text-[11px] text-white/40"
                 >
-                  Nigerian Karate Federation
+                  Karate Federation of Nigeria (KFN) Federation
                 </p>
 
               </div>
@@ -366,7 +366,7 @@ const federationLinks = [
               <p
                 class="mb-4 text-[9px] font-black uppercase tracking-[0.24em] text-white/30"
               >
-                Follow Nigerian Karate
+                Follow Karate Federation of Nigeria (KFN)
               </p>
 
               <SocialLinks />
@@ -620,7 +620,7 @@ const federationLinks = [
               <p
                 class="text-sm text-white/45"
               >
-                © {{ year }} Nigerian Karate Federation.
+                © {{ year }} Karate Federation of Nigeria (KFN) Federation.
                 All rights reserved.
               </p>
 

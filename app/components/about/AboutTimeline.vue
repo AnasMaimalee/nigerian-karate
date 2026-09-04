@@ -11,7 +11,7 @@ const milestones = [
     year: 'Foundation',
     title: 'Building the National Karate Movement',
     description:
-      'The Nigerian Karate Federation continues to strengthen the national structure for karate development, competition and athlete participation across Nigeria.',
+      'The Karate Federation of Nigeria (KFN)continues to strengthen the national structure for karate development, competition and athlete participation across Nigeria.',
     icon: Flag
   },
   {
@@ -68,7 +68,7 @@ const milestones = [
 
         <div>
           <p class="max-w-2xl text-base leading-8 text-slate-600 sm:text-lg">
-            Nigerian karate continues to evolve through the collective effort
+            Karate Federation of Nigeria (KFN) continues to evolve through the collective effort
             of athletes, coaches, officials, clubs and state associations.
           </p>
 

@@ -2,7 +2,7 @@ export const navigationItems = [
   {
     label: 'Home',
     to: '/',
-    description: 'Discover Nigerian Karate'
+    description: 'Discover Karate Federation of Nigeria (KFN)'
   },
   {
     label: 'About',

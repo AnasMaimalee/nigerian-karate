@@ -165,7 +165,7 @@ const navigationItems = [
       },
 
       {
-        label: 'Nigerian Karate Journal',
+        label: 'Karate Federation of Nigeria (KFN) Journal',
         to: '/news/journal'
       },
 
@@ -736,7 +736,7 @@ onBeforeUnmount(() => {
 
 
             <span>
-              Official Nigerian Karate Federation
+              Official Karate Federation of Nigeria (KFN) Federation
             </span>
 
           </div>
@@ -863,7 +863,7 @@ onBeforeUnmount(() => {
 
             <img
               src="/images/hero/logo.jpeg"
-              alt="Nigerian Karate Federation"
+              alt="Karate Federation of Nigeria (KFN) Federation"
               class="h-10 w-10 rounded-xl object-contain"
             />
 
@@ -881,7 +881,7 @@ onBeforeUnmount(() => {
             <span
               class="block truncate text-[13px] font-black uppercase leading-tight tracking-tight text-slate-950"
             >
-              Nigerian Karate
+              Karate Federation of Nigeria (KFN)
             </span>
 
 
@@ -982,7 +982,7 @@ onBeforeUnmount(() => {
 
           <img
             src="/images/hero/logo.jpeg"
-            alt="Nigerian Karate Federation"
+            alt="Karate Federation of Nigeria (KFN) Federation"
             class="h-16 w-auto object-contain transition duration-300 group-hover:scale-105"
           />
 
@@ -1890,7 +1890,7 @@ onBeforeUnmount(() => {
               <span
                 class="text-[8px] font-bold uppercase tracking-[0.18em] text-white/45"
               >
-                Nigerian Karate Federation
+                Karate Federation of Nigeria (KFN) Federation
               </span>
 
 
@@ -1974,7 +1974,7 @@ onBeforeUnmount(() => {
 
             <img
               src="/images/hero/logo.jpeg"
-              alt="Nigerian Karate Federation"
+              alt="Karate Federation of Nigeria (KFN) Federation"
               class="h-11 w-11 rounded-xl object-contain"
             />
 
@@ -1984,7 +1984,7 @@ onBeforeUnmount(() => {
               <h2
                 class="text-sm font-black uppercase tracking-tight text-slate-950"
               >
-                Nigerian Karate
+                Karate Federation of Nigeria (KFN)
               </h2>
 
 
@@ -2424,7 +2424,7 @@ onBeforeUnmount(() => {
             @click="closeMobileMenu"
           >
 
-            Contact Nigerian Karate Federation
+            Contact Karate Federation of Nigeria (KFN) Federation
 
 
             <ChevronRight

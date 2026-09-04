@@ -58,7 +58,7 @@ import {
           <h3
             class="mt-3 text-2xl font-black text-slate-950"
           >
-            A stronger future for Nigerian karate.
+            A stronger future for Karate Federation of Nigeria (KFN).
           </h3>
 
           <p

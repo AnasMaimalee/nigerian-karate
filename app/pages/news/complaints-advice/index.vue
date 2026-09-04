@@ -7,7 +7,7 @@ import {
 } from 'lucide-vue-next'
 
 useHead({
-  title: 'Complaints & Advice | Nigerian Karate Federation'
+  title: 'Complaints & Advice | Karate Federation of Nigeria (KFN) Federation'
 })
 
 const form = reactive({
@@ -56,7 +56,7 @@ const submitForm = () => {
           class="mt-7 max-w-2xl text-base leading-8 text-white/55"
         >
           Share your complaint, advice, observation or other important issue
-          with the Nigerian Karate Federation.
+          with the Karate Federation of Nigeria (KFN) Federation.
         </p>
 
       </div>
@@ -92,7 +92,7 @@ const submitForm = () => {
           >
             We welcome constructive advice, important complaints and feedback
             that can contribute to the continued growth and improvement of
-            Nigerian karate.
+            Karate Federation of Nigeria (KFN).
           </p>
 
         </div>
@@ -122,7 +122,7 @@ const submitForm = () => {
             <p
               class="mt-3 text-sm leading-7 text-slate-500"
             >
-              Thank you for contacting the Nigerian Karate Federation.
+              Thank you for contacting the Karate Federation of Nigeria (KFN) Federation.
             </p>
           </div>
 

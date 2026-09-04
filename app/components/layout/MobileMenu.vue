@@ -42,7 +42,7 @@ const links = [
 
         <div class="pb-10">
           <NuxtLink to="/contact" class="block rounded-2xl bg-primary px-6 py-4 text-center font-black text-white shadow-xl" @click="emit('close')">
-            Contact Nigerian Karate Federation
+            Contact Karate Federation of Nigeria (KFN) Federation
           </NuxtLink>
         </div>
       </div>
