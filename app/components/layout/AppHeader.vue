@@ -12,7 +12,8 @@ import {
   Search,
   Trophy,
   X,
-  Youtube
+  Youtube,
+  BellRing
 } from 'lucide-vue-next'
 
 import {
@@ -204,6 +205,9 @@ const compactCountdown = computed(() => {
 
   return `${String(hours).padStart(2, '0')}H ${String(minutes).padStart(2, '0')}M`
 })
+
+const announcementCount = ref(4)
+
 </script>
 
 
@@ -466,26 +470,96 @@ const compactCountdown = computed(() => {
 
     <!-- DESKTOP ACTIONS -->
 
+    <!-- DESKTOP ACTIONS -->
+
+<div
+  class="hidden shrink-0 items-center gap-2 xl:flex"
+>
+  <!-- SEARCH -->
+
+  <NuxtLink
+    to="/search"
+    class="flex h-11 w-11 items-center justify-center rounded-xl text-slate-600 transition duration-300 hover:bg-slate-100 hover:text-primary"
+    aria-label="Search"
+  >
+    <Search :size="20" />
+  </NuxtLink>
+
+
+  <!-- ANNOUNCEMENTS -->
+
+  <NuxtLink
+  to="/announcements"
+  class="group relative flex h-12 w-12 items-center justify-center rounded-2xl border border-slate-200 bg-white text-slate-700 shadow-sm transition duration-300 hover:-translate-y-0.5 hover:border-primary/30 hover:bg-primary hover:text-white hover:shadow-lg"
+  aria-label="Announcements"
+>
+  <!-- BELL -->
+  <Bell
+    :size="23"
+    class="transition duration-300 group-hover:rotate-12"
+  />
+
+  <!-- BLINKING INDICATOR -->
+  <span
+    class="absolute right-1.5 top-1.5 flex h-3 w-3"
+  >
+    <span
+      class="absolute inline-flex h-full w-full animate-ping rounded-full bg-red-500 opacity-70"
+    />
+
+    <span
+      class="relative inline-flex h-3 w-3 rounded-full border-2 border-white bg-red-500 shadow-sm"
+    />
+  </span>
+
+  <!-- ANNOUNCEMENT COUNT -->
+  <span
+    class="absolute -right-2 -top-2 flex h-6 min-w-6 items-center justify-center rounded-full border-2 border-white bg-red-600 px-1.5 text-[10px] font-black text-white shadow-lg"
+  >
+    {{ announcementCount }}
+  </span>
+
+  <!-- TOOLTIP ABOVE -->
+  <div
+    class="pointer-events-none absolute bottom-full left-1/2 z-[9999] mb-4 w-max -translate-x-1/2 translate-y-2 opacity-0 transition-all duration-300 group-hover:translate-y-0 group-hover:opacity-100"
+  >
     <div
-      class="hidden shrink-0 items-center gap-3 xl:flex"
+      class="relative rounded-2xl bg-slate-950 px-5 py-3 text-center shadow-2xl"
     >
-      <NuxtLink
-        to="/search"
-        class="flex h-11 w-11 items-center justify-center rounded-xl text-slate-600 transition duration-300 hover:bg-slate-100 hover:text-primary"
-        aria-label="Search"
+      <div
+        class="flex items-center justify-center gap-2"
       >
-        <Search :size="20" />
-      </NuxtLink>
+        <Bell
+          :size="14"
+          class="text-emerald-400"
+        />
 
-      <NuxtLink
-        to="/contact"
-        class="inline-flex items-center gap-2 rounded-xl bg-slate-950 px-5 py-3.5 text-[11px] font-black uppercase tracking-wide text-white shadow-lg transition duration-300 hover:-translate-y-0.5 hover:bg-primary"
-      >
-        Contact NKF
+        <span
+          class="text-[11px] font-black uppercase tracking-[0.12em] text-white"
+        >
+          {{ announcementCount }} New Announcements
+        </span>
+      </div>
 
-        <ChevronRight :size="16" />
-      </NuxtLink>
+      <!-- TOOLTIP ARROW -->
+      <span
+        class="absolute left-1/2 top-full -translate-x-1/2 border-x-[8px] border-t-[8px] border-x-transparent border-t-slate-950"
+      />
     </div>
+  </div>
+</NuxtLink>
+
+  <!-- CONTACT -->
+
+  <NuxtLink
+    to="/contact"
+    class="ml-1 inline-flex items-center gap-2 rounded-xl bg-slate-950 px-5 py-3.5 text-[11px] font-black uppercase tracking-wide text-white shadow-lg transition duration-300 hover:-translate-y-0.5 hover:bg-primary"
+  >
+    Contact NKF
+
+    <ChevronRight :size="16" />
+  </NuxtLink>
+</div>
 
 
     <!-- TABLET MENU -->
@@ -535,340 +609,424 @@ const compactCountdown = computed(() => {
          UPCOMING EVENT BAR
     ============================================================= -->
 
+    <!-- ============================================================
+     UPCOMING EVENT BAR
+============================================================ -->
+
+<div
+  class="relative overflow-hidden bg-gradient-to-r from-primary via-primary to-emerald-700 text-white"
+>
+
+  <!-- PREMIUM BACKGROUND EFFECTS -->
+
+  <div
+    class="pointer-events-none absolute inset-0"
+  >
     <div
-      class="relative overflow-hidden bg-gradient-to-r from-primary via-primary to-emerald-700 text-white"
+      class="absolute -left-16 -top-16 h-48 w-48 rounded-full bg-white/10 blur-3xl"
+    />
+
+    <div
+      class="absolute right-[15%] top-0 h-40 w-40 rounded-full bg-emerald-200/20 blur-3xl"
+    />
+
+    <div
+      class="absolute inset-0 opacity-[0.08]"
+      style="
+        background-image:
+          linear-gradient(rgba(255,255,255,.3) 1px, transparent 1px),
+          linear-gradient(90deg, rgba(255,255,255,.3) 1px, transparent 1px);
+        background-size: 36px 36px;
+      "
+    />
+  </div>
+
+
+  <div
+    class="relative container-nkf"
+  >
+
+    <!-- ========================================================
+         DESKTOP EVENT BAR
+    ========================================================= -->
+
+    <div
+      class="hidden min-h-[82px] items-center justify-between gap-8 lg:flex"
     >
 
-      <!-- BACKGROUND EFFECT -->
+      <!-- EVENT DETAILS -->
 
       <div
-        class="pointer-events-none absolute inset-0 opacity-20"
-      >
-        <div
-          class="absolute -left-10 top-0 h-32 w-32 rounded-full bg-white blur-3xl"
-        />
-
-        <div
-          class="absolute right-1/4 top-0 h-32 w-32 rounded-full bg-emerald-300 blur-3xl"
-        />
-      </div>
-
-
-      <div
-        class="relative container-nkf"
+        class="flex min-w-0 items-center gap-5"
       >
 
-        <!-- ========================================================
-             DESKTOP EVENT BAR
-        ========================================================= -->
+        <!-- LIVE ACTIVITY -->
 
         <div
-          class="hidden min-h-[76px] items-center justify-between gap-8 lg:flex"
+          class="flex shrink-0 items-center gap-1.5"
         >
+          <span
+            class="h-2.5 w-2.5 animate-pulse rounded-full bg-white"
+          />
 
-          <!-- EVENT DETAILS -->
+          <span
+            class="h-2.5 w-2.5 animate-pulse rounded-full bg-emerald-200 [animation-delay:200ms]"
+          />
 
-          <div
-            class="flex min-w-0 items-center gap-5"
-          >
-
-            <!-- THREE DOTS -->
-
-            <div
-              class="flex shrink-0 items-center gap-1.5"
-            >
-              <span
-                class="h-2.5 w-2.5 animate-pulse rounded-full bg-white"
-              />
-
-              <span
-                class="h-2.5 w-2.5 animate-pulse rounded-full bg-emerald-200 [animation-delay:200ms]"
-              />
-
-              <span
-                class="h-2.5 w-2.5 animate-pulse rounded-full bg-white/70 [animation-delay:400ms]"
-              />
-            </div>
-
-
-            <!-- TROPHY -->
-
-            <div
-              class="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl border border-white/20 bg-white/10 backdrop-blur"
-            >
-              <Trophy :size="20" />
-            </div>
-
-
-            <!-- TEXT -->
-
-            <div
-              class="min-w-0"
-            >
-              <div
-                class="flex items-center gap-3"
-              >
-                <span
-                  class="text-[9px] font-black uppercase tracking-[0.22em] text-white/65"
-                >
-                  Next Upcoming Championship
-                </span>
-
-                <span
-                  class="h-3 w-px bg-white/30"
-                />
-
-                <span
-                  class="inline-flex items-center gap-1.5 text-[9px] font-black uppercase tracking-wider text-white"
-                >
-                  <MapPin :size="12" />
-
-                  {{ featuredEvent.location }}
-                </span>
-              </div>
-
-              <h3
-                class="mt-1 truncate text-base font-black tracking-tight text-white"
-              >
-                {{ featuredEvent.title }}
-              </h3>
-
-              <p
-                class="mt-1 flex items-center gap-2 text-[10px] font-semibold text-white/65"
-              >
-                <CalendarDays :size="12" />
-
-                {{ formattedDate }}
-
-                <span class="text-white/30">
-                  •
-                </span>
-
-                {{ featuredEvent.venue }}
-              </p>
-            </div>
-
-          </div>
-
-
-          <!-- FULL COUNTDOWN -->
-
-          <div
-            v-if="!countdown.expired"
-            class="flex shrink-0 items-center gap-3"
-          >
-
-            <div
-              class="mr-1 flex items-center gap-2"
-            >
-              <Clock3 :size="15" />
-
-              <span
-                class="text-[9px] font-black uppercase tracking-[0.18em] text-white/70"
-              >
-                Countdown
-              </span>
-            </div>
-
-
-            <!-- DAYS -->
-
-            <div
-              class="min-w-[58px] rounded-xl border border-white/15 bg-black/10 px-3 py-2 text-center backdrop-blur-sm"
-            >
-              <strong
-                class="block text-lg font-black tabular-nums leading-none"
-              >
-                {{ countdown.days }}
-              </strong>
-
-              <span
-                class="mt-1 block text-[7px] font-black uppercase tracking-widest text-white/60"
-              >
-                Days
-              </span>
-            </div>
-
-
-            <!-- HOURS -->
-
-            <div
-              class="min-w-[58px] rounded-xl border border-white/15 bg-black/10 px-3 py-2 text-center backdrop-blur-sm"
-            >
-              <strong
-                class="block text-lg font-black tabular-nums leading-none"
-              >
-                {{ countdown.hours }}
-              </strong>
-
-              <span
-                class="mt-1 block text-[7px] font-black uppercase tracking-widest text-white/60"
-              >
-                Hours
-              </span>
-            </div>
-
-
-            <!-- MINUTES -->
-
-            <div
-              class="min-w-[58px] rounded-xl border border-white/15 bg-black/10 px-3 py-2 text-center backdrop-blur-sm"
-            >
-              <strong
-                class="block text-lg font-black tabular-nums leading-none"
-              >
-                {{ countdown.minutes }}
-              </strong>
-
-              <span
-                class="mt-1 block text-[7px] font-black uppercase tracking-widest text-white/60"
-              >
-                Min
-              </span>
-            </div>
-
-
-            <!-- SECONDS -->
-
-            <div
-              class="min-w-[58px] rounded-xl border border-white/15 bg-black/10 px-3 py-2 text-center backdrop-blur-sm"
-            >
-              <strong
-                class="block text-lg font-black tabular-nums leading-none"
-              >
-                {{ countdown.seconds }}
-              </strong>
-
-              <span
-                class="mt-1 block text-[7px] font-black uppercase tracking-widest text-white/60"
-              >
-                Sec
-              </span>
-            </div>
-
-
-            <NuxtLink
-              to="/events"
-              class="ml-2 inline-flex items-center gap-2 rounded-xl bg-white px-4 py-3 text-[9px] font-black uppercase tracking-wide text-primary shadow-lg transition hover:-translate-y-0.5 hover:shadow-xl"
-            >
-              Event Details
-
-              <ChevronRight :size="14" />
-            </NuxtLink>
-
-          </div>
-
-
-          <!-- EVENT LIVE -->
-
-          <div
-            v-else
-            class="flex items-center gap-3 rounded-xl border border-white/20 bg-black/10 px-5 py-3"
-          >
-            <span
-              class="relative flex h-3 w-3"
-            >
-              <span
-                class="absolute inline-flex h-full w-full animate-ping rounded-full bg-white opacity-70"
-              />
-
-              <span
-                class="relative inline-flex h-3 w-3 rounded-full bg-white"
-              />
-            </span>
-
-            <span
-              class="text-xs font-black uppercase tracking-widest"
-            >
-              Championship In Progress
-            </span>
-          </div>
-
+          <span
+            class="h-2.5 w-2.5 animate-pulse rounded-full bg-white/70 [animation-delay:400ms]"
+          />
         </div>
 
 
-        <!-- ========================================================
-             MOBILE EVENT BAR
-        ========================================================= -->
+        <!-- TROPHY -->
 
         <div
-          class="py-4 lg:hidden"
+          class="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl border border-white/20 bg-white/10 shadow-lg backdrop-blur"
         >
-          <NuxtLink
-            to="/events"
-            class="group flex items-center justify-between gap-4"
+          <Trophy :size="21" />
+        </div>
+
+
+        <!-- EVENT INFORMATION -->
+
+        <div
+          class="min-w-0"
+        >
+          <div
+            class="flex items-center gap-3"
           >
-
-            <!-- LEFT -->
-
-            <div
-              class="flex min-w-0 items-center gap-3"
+            <span
+              class="text-[9px] font-black uppercase tracking-[0.22em] text-white/65"
             >
+              Next Upcoming Championship
+            </span>
 
-              <!-- THREE DOTS -->
+            <span
+              class="h-3 w-px bg-white/30"
+            />
 
-              <div
-                class="flex shrink-0 items-center gap-1"
-              >
-                <span
-                  class="h-1.5 w-1.5 animate-pulse rounded-full bg-white"
-                />
-
-                <span
-                  class="h-1.5 w-1.5 animate-pulse rounded-full bg-emerald-200 [animation-delay:200ms]"
-                />
-
-                <span
-                  class="h-1.5 w-1.5 animate-pulse rounded-full bg-white/70 [animation-delay:400ms]"
-                />
-              </div>
-
-
-              <!-- EVENT TEXT -->
-
-              <div
-                class="min-w-0"
-              >
-                <span
-                  class="block text-[8px] font-black uppercase tracking-[0.18em] text-white/60"
-                >
-                  Next Championship
-                </span>
-
-                <h3
-                  class="mt-1 truncate text-[13px] font-black leading-tight"
-                >
-                  {{ featuredEvent.title }}
-                </h3>
-
-                <div
-                  class="mt-1 flex items-center gap-1.5 text-[9px] font-bold text-white/65"
-                >
-                  <MapPin :size="11" />
-
-                  <span class="truncate">
-                    {{ featuredEvent.location }}
-                  </span>
-                </div>
-              </div>
-
-            </div>
-
-
-            <!-- ARROW -->
-
-            <div
-              class="flex h-9 w-9 shrink-0 items-center justify-center rounded-xl border border-white/15 bg-white/10 transition group-hover:bg-white group-hover:text-primary"
+            <span
+              class="inline-flex items-center gap-1.5 text-[9px] font-black uppercase tracking-wider text-white"
             >
-              <ChevronRight :size="17" />
-            </div>
+              <MapPin :size="12" />
 
-          </NuxtLink>
+              {{ featuredEvent.location }}
+            </span>
+          </div>
+
+
+          <h3
+            class="mt-1 truncate text-[17px] font-black tracking-tight text-white"
+          >
+            {{ featuredEvent.title }}
+          </h3>
+
+
+          <p
+            class="mt-1.5 flex items-center gap-2 text-[10px] font-semibold text-white/65"
+          >
+            <CalendarDays :size="12" />
+
+            {{ formattedDate }}
+
+            <span class="text-white/30">
+              •
+            </span>
+
+            {{ featuredEvent.venue }}
+          </p>
         </div>
 
       </div>
+
+
+      <!-- FULL COUNTDOWN -->
+
+      <div
+        v-if="!countdown.expired"
+        class="flex shrink-0 items-center gap-3"
+      >
+
+        <div
+          class="mr-1 flex items-center gap-2"
+        >
+          <Clock3 :size="15" />
+
+          <span
+            class="text-[9px] font-black uppercase tracking-[0.18em] text-white/70"
+          >
+            Countdown
+          </span>
+        </div>
+
+
+        <div
+          class="min-w-[58px] rounded-xl border border-white/15 bg-black/10 px-3 py-2 text-center backdrop-blur-sm"
+        >
+          <strong
+            class="block text-lg font-black tabular-nums leading-none"
+          >
+            {{ countdown.days }}
+          </strong>
+
+          <span
+            class="mt-1 block text-[7px] font-black uppercase tracking-widest text-white/60"
+          >
+            Days
+          </span>
+        </div>
+
+
+        <div
+          class="min-w-[58px] rounded-xl border border-white/15 bg-black/10 px-3 py-2 text-center backdrop-blur-sm"
+        >
+          <strong
+            class="block text-lg font-black tabular-nums leading-none"
+          >
+            {{ countdown.hours }}
+          </strong>
+
+          <span
+            class="mt-1 block text-[7px] font-black uppercase tracking-widest text-white/60"
+          >
+            Hours
+          </span>
+        </div>
+
+
+        <div
+          class="min-w-[58px] rounded-xl border border-white/15 bg-black/10 px-3 py-2 text-center backdrop-blur-sm"
+        >
+          <strong
+            class="block text-lg font-black tabular-nums leading-none"
+          >
+            {{ countdown.minutes }}
+          </strong>
+
+          <span
+            class="mt-1 block text-[7px] font-black uppercase tracking-widest text-white/60"
+          >
+            Min
+          </span>
+        </div>
+
+
+        <div
+          class="min-w-[58px] rounded-xl border border-white/15 bg-black/10 px-3 py-2 text-center backdrop-blur-sm"
+        >
+          <strong
+            class="block text-lg font-black tabular-nums leading-none"
+          >
+            {{ countdown.seconds }}
+          </strong>
+
+          <span
+            class="mt-1 block text-[7px] font-black uppercase tracking-widest text-white/60"
+          >
+            Sec
+          </span>
+        </div>
+
+
+        <NuxtLink
+          to="/events"
+          class="ml-2 inline-flex items-center gap-2 rounded-xl bg-white px-4 py-3 text-[9px] font-black uppercase tracking-wide text-primary shadow-lg transition duration-300 hover:-translate-y-0.5 hover:shadow-xl"
+        >
+          Event Details
+
+          <ChevronRight :size="14" />
+        </NuxtLink>
+
+      </div>
+
+
+      <!-- EVENT LIVE -->
+
+      <div
+        v-else
+        class="flex items-center gap-3 rounded-xl border border-white/20 bg-black/10 px-5 py-3"
+      >
+        <span
+          class="relative flex h-3 w-3"
+        >
+          <span
+            class="absolute inline-flex h-full w-full animate-ping rounded-full bg-white opacity-70"
+          />
+
+          <span
+            class="relative inline-flex h-3 w-3 rounded-full bg-white"
+          />
+        </span>
+
+        <span
+          class="text-xs font-black uppercase tracking-widest"
+        >
+          Championship In Progress
+        </span>
+      </div>
+
     </div>
 
+
+
+    <!-- ========================================================
+         PREMIUM MOBILE EVENT BAR
+    ========================================================= -->
+
+    <NuxtLink
+      to="/events"
+      class="group relative block py-4 lg:hidden"
+    >
+
+      <div
+        class="flex items-center gap-3"
+      >
+
+        <!-- EVENT ICON -->
+
+        <div
+          class="relative flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl border border-white/20 bg-white/10 shadow-lg backdrop-blur-sm"
+        >
+          <!-- GLOW -->
+
+          <span
+            class="absolute inset-0 animate-pulse rounded-2xl bg-white/10"
+          />
+
+          <Trophy
+            :size="21"
+            class="relative"
+          />
+        </div>
+
+
+        <!-- EVENT CONTENT -->
+
+        <div
+          class="min-w-0 flex-1"
+        >
+
+          <!-- TOP LABEL -->
+
+          <div
+            class="flex items-center gap-2"
+          >
+            <span
+              class="relative flex h-2 w-2"
+            >
+              <span
+                class="absolute inline-flex h-full w-full animate-ping rounded-full bg-white/70"
+              />
+
+              <span
+                class="relative inline-flex h-2 w-2 rounded-full bg-white"
+              />
+            </span>
+
+
+            <span
+              class="text-[8px] font-black uppercase tracking-[0.2em] text-white/65"
+            >
+              Upcoming Championship
+            </span>
+          </div>
+
+
+          <!-- TITLE -->
+
+          <h3
+            class="mt-1 truncate text-[14px] font-black tracking-tight text-white"
+          >
+            {{ featuredEvent.title }}
+          </h3>
+
+
+          <!-- META -->
+
+          <div
+            class="mt-2 flex items-center gap-3 overflow-hidden"
+          >
+
+            <span
+              class="flex min-w-0 items-center gap-1 text-[9px] font-bold text-white/70"
+            >
+              <MapPin
+                :size="11"
+                class="shrink-0"
+              />
+
+              <span class="truncate">
+                {{ featuredEvent.location }}
+              </span>
+            </span>
+
+
+            <span
+              class="h-3 w-px shrink-0 bg-white/25"
+            />
+
+
+            <span
+              class="flex shrink-0 items-center gap-1 text-[9px] font-bold text-white/70"
+            >
+              <CalendarDays :size="11" />
+
+              {{ formattedDate }}
+            </span>
+
+          </div>
+
+        </div>
+
+
+        <!-- ARROW -->
+
+        <div
+          class="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl border border-white/15 bg-white/10 transition duration-300 group-hover:translate-x-1 group-hover:bg-white group-hover:text-primary"
+        >
+          <ChevronRight :size="18" />
+        </div>
+
+      </div>
+
+
+      <!-- MOBILE EVENT PROGRESS LINE -->
+
+      <div
+        class="mt-3 h-px w-full overflow-hidden bg-white/15"
+      >
+        <div
+          class="h-full w-1/3 bg-white/70 transition-all duration-700 group-hover:w-full"
+        />
+      </div>
+
+
+      <!-- MOBILE CTA -->
+
+      <div
+        class="mt-2 flex items-center justify-between"
+      >
+        <span
+          class="text-[8px] font-bold uppercase tracking-[0.18em] text-white/45"
+        >
+          Nigerian Karate Federation
+        </span>
+
+
+        <span
+          class="inline-flex items-center gap-1 text-[9px] font-black uppercase tracking-wide text-white"
+        >
+          View Event
+
+          <ChevronRight :size="12" />
+        </span>
+      </div>
+
+    </NuxtLink>
+
+  </div>
+</div>
 
     <!-- ============================================================
          MOBILE MENU OVERLAY
