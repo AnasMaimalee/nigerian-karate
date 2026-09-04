@@ -40,6 +40,12 @@ const leaders = [
     category: 'National Representative'
   },
   {
+    name: 'Dr. Mustapha Sharif Ramadan',
+    role: 'Chairman, Publicity ICT & Media Technical Support.',
+    image: '/images/staff/shariff.jpeg',
+    category: 'Chairman, Publicity ICT & Media Technical Support.'
+  },
+  {
     name: 'H.E Silas A. Agara',
     role: 'UFAK African 4th Vice President',
     image: '/images/staff/agaras.jpeg',
@@ -52,12 +58,20 @@ const leaders = [
     category: 'National Representative'
   },
   {
+    name: 'Mr. Dave Jegede (Shihan)',
+    role: 'KFN. TECHNICAL DIRECTOR',
+    image: '/images/staff/jede.jpeg',
+    category: 'KFN. TECHNICAL DIRECTOR'
+  },
+  {
     name: 'Shehu Dikko',
     role: 'Chairman',
     subtitle: 'National Sports Commission',
     image: '/images/staff/sport-chairman.webp',
     category: 'National Sports Leadership'
   },
+  
+
   {
     name: 'Hon. Bukola Olopade',
     role: 'Director General',
@@ -70,7 +84,8 @@ const leaders = [
     role: 'Japanese Ambassador to Nigeria',
     image: '/images/staff/suzuki.png',
     category: 'International Partnership'
-  }
+  },
+
 ]
 </script>
 

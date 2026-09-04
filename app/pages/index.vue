@@ -2,6 +2,7 @@
 import { computed } from 'vue'
 
 import HeroSection from '~/components/home/HeroSection.vue'
+import AboutLeadership from '~/components/about/AboutLeadership.vue'
 import FederationIntro from '~/components/home/FederationIntro.vue'
 import StatisticsSection from '~/components/home/StatisticsSection.vue'
 import FeaturedEventSection from '~/components/home/FeaturedEventSection.vue'
@@ -93,57 +94,106 @@ const topRankings = computed(() => {
 })
 </script>
 
+
 <template>
   <main
     class="min-h-screen overflow-hidden bg-background text-foreground"
   >
-    <!-- HERO -->
+
+    <!-- ============================================================
+         HERO
+    ============================================================ -->
+
     <HeroSection />
 
-    <!-- FEDERATION INTRODUCTION -->
+
+    <!-- ============================================================
+         NEWLY ELECTED NKF LEADERSHIP
+    ============================================================ -->
+
+    <AboutLeadership />
+
+
+    <!-- ============================================================
+         FEDERATION INTRODUCTION
+    ============================================================ -->
+
     <section id="federation-intro">
       <FederationIntro />
     </section>
 
-    <!-- NATIONAL STATISTICS -->
+
+    <!-- ============================================================
+         NATIONAL STATISTICS
+    ============================================================ -->
+
     <StatisticsSection />
 
-    <!-- FEATURED EVENT -->
+
+    <!-- ============================================================
+         FEATURED EVENT
+    ============================================================ -->
+
     <FeaturedEventSection
       v-if="featuredEvent"
       :event="featuredEvent"
     />
 
-    <!-- FEATURED ATHLETES -->
+
+    <!-- ============================================================
+         FEATURED ATHLETES
+    ============================================================ -->
+
     <FeaturedAthletesSection
       :athletes="featuredAthletes"
     />
 
-    <!-- KARATE GALLERY -->
+
+    <!-- ============================================================
+         KARATE GALLERY
+    ============================================================ -->
+
     <GallerySection
       :items="featuredGallery"
     />
 
-    <!-- NKF TV -->
+
+    <!-- ============================================================
+         NKF TV
+    ============================================================ -->
+
     <NKFTVSection
       v-if="featuredVideo"
       :featured-video="featuredVideo"
       :videos="featuredVideos"
     />
 
-    <!-- LATEST NEWS -->
+
+    <!-- ============================================================
+         LATEST NEWS
+    ============================================================ -->
+
     <LatestNewsSection
       v-if="featuredNews"
       :featured-news="featuredNews"
       :items="latestNews"
     />
 
-    <!-- NATIONAL RANKINGS -->
+
+    <!-- ============================================================
+         NATIONAL RANKINGS
+    ============================================================ -->
+
     <RankingsPreviewSection
       :athletes="topRankings"
     />
 
-    <!-- FINAL CALL TO ACTION -->
+
+    <!-- ============================================================
+         FINAL CALL TO ACTION
+    ============================================================ -->
+
     <JoinKarateSection />
+
   </main>
 </template>
