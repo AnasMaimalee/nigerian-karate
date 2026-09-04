@@ -1,0 +1,52 @@
+@layer utilities {
+  .nkf-container {
+    width: min(100% - 2rem, 1280px);
+    margin-inline: auto;
+  }
+
+  @media (min-width: 768px) {
+    .nkf-container {
+      width: min(100% - 4rem, 1280px);
+    }
+  }
+
+  .section-padding {
+    padding-block: clamp(4rem, 8vw, 8rem);
+  }
+
+  .section-eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+
+    color: var(--color-primary);
+
+    font-size: 0.75rem;
+    font-weight: 800;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+  }
+
+  .section-title {
+    font-family: var(--font-display);
+
+    font-size: clamp(2.5rem, 5vw, 5rem);
+    font-weight: 800;
+    line-height: 0.95;
+
+    letter-spacing: -0.03em;
+  }
+
+  .section-description {
+    max-width: 42rem;
+
+    color: var(--color-muted-foreground);
+
+    font-size: clamp(1rem, 1.5vw, 1.125rem);
+    line-height: 1.8;
+  }
+
+  .text-balance {
+    text-wrap: balance;
+  }
+}

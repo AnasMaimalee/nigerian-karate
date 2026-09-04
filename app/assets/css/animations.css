@@ -1,0 +1,55 @@
+@keyframes nkf-fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(1.5rem);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes nkf-float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-0.75rem);
+  }
+}
+
+@keyframes nkf-pulse {
+  0%,
+  100% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0.5;
+  }
+}
+
+@keyframes nkf-marquee {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-nkf-fade-up {
+  animation: nkf-fade-up 700ms ease-out both;
+}
+
+.animate-nkf-float {
+  animation: nkf-float 4s ease-in-out infinite;
+}
+
+.animate-nkf-pulse {
+  animation: nkf-pulse 1.5s ease-in-out infinite;
+}

@@ -1,0 +1,93 @@
+@theme {
+  /* =========================================================
+     BRAND
+  ========================================================= */
+
+  --color-primary: #087443;
+  --color-primary-hover: #065f38;
+  --color-primary-light: #e7f6ee;
+  --color-primary-foreground: #ffffff;
+
+  --color-secondary: #f4b400;
+  --color-secondary-hover: #d99e00;
+  --color-secondary-light: #fff7d6;
+  --color-secondary-foreground: #111827;
+
+  --color-accent: #c62828;
+  --color-accent-hover: #a61f1f;
+  --color-accent-light: #fdeaea;
+  --color-accent-foreground: #ffffff;
+
+
+  /* =========================================================
+     SURFACES
+  ========================================================= */
+
+  --color-background: #ffffff;
+  --color-foreground: #111827;
+
+  --color-surface: #f7f8f7;
+  --color-surface-elevated: #ffffff;
+
+  --color-muted: #eef1ef;
+  --color-muted-foreground: #64748b;
+
+
+  /* =========================================================
+     BORDERS
+  ========================================================= */
+
+  --color-border: #dfe5e1;
+  --color-border-strong: #b9c5be;
+
+
+  /* =========================================================
+     STATUS
+  ========================================================= */
+
+  --color-success: #16a34a;
+  --color-success-light: #dcfce7;
+
+  --color-warning: #f59e0b;
+  --color-warning-light: #fef3c7;
+
+  --color-danger: #dc2626;
+  --color-danger-light: #fee2e2;
+
+  --color-info: #2563eb;
+  --color-info-light: #dbeafe;
+
+
+  /* =========================================================
+     DARK SECTIONS
+  ========================================================= */
+
+  --color-dark: #071a12;
+  --color-dark-surface: #0d251b;
+  --color-dark-foreground: #f8fafc;
+
+
+  /* =========================================================
+     TYPOGRAPHY
+  ========================================================= */
+
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Barlow Condensed", "Inter", sans-serif;
+
+
+  /* =========================================================
+     SHADOWS
+  ========================================================= */
+
+  --shadow-soft: 0 8px 30px rgba(15, 23, 42, 0.08);
+  --shadow-card: 0 20px 45px rgba(15, 23, 42, 0.12);
+  --shadow-strong: 0 30px 70px rgba(7, 26, 18, 0.25);
+
+
+  /* =========================================================
+     RADIUS
+  ========================================================= */
+
+  --radius-card: 1.25rem;
+  --radius-button: 0.875rem;
+}
