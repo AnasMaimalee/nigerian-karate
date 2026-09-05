@@ -22,7 +22,8 @@ import {
   nextTick,
   onBeforeUnmount,
   onMounted,
-  ref
+  ref,
+  watch
 } from 'vue'
 
 /*
@@ -31,7 +32,8 @@ import {
 |--------------------------------------------------------------------------
 */
 
-const mobileMenuOpen = ref(false)
+const mobileMenuOpen =
+  ref(false)
 
 /*
 |--------------------------------------------------------------------------
@@ -77,23 +79,105 @@ const openDesktopDropdown = (
 }
 
 const closeDesktopDropdown = () => {
-  desktopDropdownOpen.value = null
+  desktopDropdownOpen.value =
+    null
 }
 
 /*
 |--------------------------------------------------------------------------
-| CLOSE MOBILE MENU
+| BODY SCROLL
+|--------------------------------------------------------------------------
+|
+| This controls the page scroll while
+| the mobile side menu is open.
+|
+*/
+
+const lockBodyScroll = () => {
+  if (
+    typeof document ===
+    'undefined'
+  ) {
+    return
+  }
+
+  document.body.style.overflow =
+    'hidden'
+}
+
+const unlockBodyScroll = () => {
+  if (
+    typeof document ===
+    'undefined'
+  ) {
+    return
+  }
+
+  document.body.style.overflow =
+    ''
+
+  document.body.style.removeProperty(
+    'overflow'
+  )
+}
+
+const updateBodyScroll = () => {
+  if (
+    mobileMenuOpen.value
+  ) {
+    lockBodyScroll()
+  } else {
+    unlockBodyScroll()
+  }
+}
+
+/*
+|--------------------------------------------------------------------------
+| OPEN MOBILE MENU
 |--------------------------------------------------------------------------
 */
 
-const closeMobileMenu = () => {
-  mobileMenuOpen.value = false
+const openMobileMenu = async () => {
+  mobileMenuOpen.value =
+    true
 
   mobileOpenDropdown.value =
     null
 
   desktopDropdownOpen.value =
     null
+
+  showMobileUpcoming.value =
+    true
+
+  lastScrollTop = 0
+
+  await nextTick()
+
+  lockBodyScroll()
+}
+
+/*
+|--------------------------------------------------------------------------
+| CLOSE MOBILE MENU
+|--------------------------------------------------------------------------
+|
+| IMPORTANT:
+| This MUST unlock body scroll.
+|
+*/
+
+const closeMobileMenu = () => {
+  mobileMenuOpen.value =
+    false
+
+  mobileOpenDropdown.value =
+    null
+
+  desktopDropdownOpen.value =
+    null
+
+  unlockBodyScroll()
 }
 
 /*
@@ -165,7 +249,8 @@ const navigationItems = [
       },
 
       {
-        label: 'Karate Federation of Nigeria (KFN) Journal',
+        label:
+          'Karate Federation of Nigeria (KFN) Journal',
         to: '/news/journal'
       },
 
@@ -242,9 +327,12 @@ const countdown = computed(() => {
     ).getTime()
 
   const difference =
-    target - currentTime.value
+    target -
+    currentTime.value
 
-  if (difference <= 0) {
+  if (
+    difference <= 0
+  ) {
     return {
       expired: true,
       days: 0,
@@ -269,16 +357,23 @@ const countdown = computed(() => {
 
     hours:
       Math.floor(
-        (totalSeconds % 86400) / 3600
+        (
+          totalSeconds %
+          86400
+        ) / 3600
       ),
 
     minutes:
       Math.floor(
-        (totalSeconds % 3600) / 60
+        (
+          totalSeconds %
+          3600
+        ) / 60
       ),
 
     seconds:
-      totalSeconds % 60
+      totalSeconds %
+      60
   }
 })
 
@@ -288,18 +383,19 @@ const countdown = computed(() => {
 |--------------------------------------------------------------------------
 */
 
-const formattedDate = computed(() => {
-  return new Date(
-    featuredEvent.startDate
-  ).toLocaleDateString(
-    'en-NG',
-    {
-      day: 'numeric',
-      month: 'short',
-      year: 'numeric'
-    }
-  )
-})
+const formattedDate =
+  computed(() => {
+    return new Date(
+      featuredEvent.startDate
+    ).toLocaleDateString(
+      'en-NG',
+      {
+        day: 'numeric',
+        month: 'short',
+        year: 'numeric'
+      }
+    )
+  })
 
 /*
 |--------------------------------------------------------------------------
@@ -321,10 +417,15 @@ const compactCountdown =
       minutes
     } = countdown.value
 
-    if (days > 0) {
+    if (
+      days > 0
+    ) {
       return `${days}D ${String(
         hours
-      ).padStart(2, '0')}H`
+      ).padStart(
+        2,
+        '0'
+      )}H`
     }
 
     return `${String(
@@ -334,7 +435,10 @@ const compactCountdown =
       '0'
     )}H ${String(
       minutes
-    ).padStart(2, '0')}M`
+    ).padStart(
+      2,
+      '0'
+    )}M`
   })
 
 /*
@@ -355,7 +459,8 @@ const announcementCount =
 const showMobileUpcoming =
   ref(true)
 
-let lastScrollTop = 0
+let lastScrollTop =
+  0
 
 const handleMobileMenuScroll = (
   event: Event
@@ -368,7 +473,7 @@ const handleMobileMenuScroll = (
 
   /*
   |--------------------------------------------------------------------------
-  | ALWAYS SHOW AT TOP
+  | AT TOP
   |--------------------------------------------------------------------------
   */
 
@@ -386,72 +491,90 @@ const handleMobileMenuScroll = (
 
   /*
   |--------------------------------------------------------------------------
-  | SCROLL DOWN
+  | SCROLLING DOWN
   |--------------------------------------------------------------------------
   */
 
   if (
     currentScrollTop >
-    lastScrollTop + 5
+    lastScrollTop + 12
   ) {
     showMobileUpcoming.value =
       false
+
+    lastScrollTop =
+      currentScrollTop
+
+    return
   }
 
   /*
   |--------------------------------------------------------------------------
-  | SCROLL UP
+  | SCROLLING UP
   |--------------------------------------------------------------------------
   */
 
-  else if (
+  if (
     currentScrollTop <
-    lastScrollTop - 5
+    lastScrollTop - 12
   ) {
     showMobileUpcoming.value =
       true
-  }
 
-  lastScrollTop =
-    currentScrollTop
+    lastScrollTop =
+      currentScrollTop
+
+    return
+  }
 }
 
 /*
 |--------------------------------------------------------------------------
-| MOBILE EVENT BAR SCROLL
+| EVENT BAR SCROLL
 |--------------------------------------------------------------------------
+|
+| Behaviour:
+|
+| Scroll DOWN  → hide
+| Scroll UP    → show
+|
+| Uses larger threshold to prevent
+| blinking and shaking.
+|
 */
 
 const showMobileEventBar =
   ref(true)
 
-let lastPageScrollY = 0
+let lastPageScrollY =
+  0
 
-let scrollTicking = false
+let scrollTicking =
+  false
+
+const scrollThreshold =
+  20
 
 const handlePageScroll = () => {
-  if (scrollTicking) {
+  if (
+    scrollTicking
+  ) {
     return
   }
 
-  scrollTicking = true
+  scrollTicking =
+    true
 
   window.requestAnimationFrame(() => {
     const currentScrollY =
-      window.scrollY
+      Math.max(
+        0,
+        window.scrollY
+      )
 
-    /*
-    |--------------------------------------------------------------------------
-    | ALWAYS SHOW AT TOP
-    |--------------------------------------------------------------------------
-    */
-
-    if (
-      currentScrollY <= 20
-    ) {
-      showMobileEventBar.value =
-        true
-    }
+    const scrollDifference =
+      currentScrollY -
+      lastPageScrollY
 
     /*
     |--------------------------------------------------------------------------
@@ -459,12 +582,15 @@ const handlePageScroll = () => {
     |--------------------------------------------------------------------------
     */
 
-    else if (
-      currentScrollY >
-      lastPageScrollY + 8
+    if (
+      scrollDifference >
+      scrollThreshold
     ) {
       showMobileEventBar.value =
         false
+
+      lastPageScrollY =
+        currentScrollY
     }
 
     /*
@@ -474,17 +600,34 @@ const handlePageScroll = () => {
     */
 
     else if (
-      currentScrollY <
-      lastPageScrollY - 8
+      scrollDifference <
+      -scrollThreshold
     ) {
       showMobileEventBar.value =
         true
+
+      lastPageScrollY =
+        currentScrollY
     }
 
-    lastPageScrollY =
-      currentScrollY
+    /*
+    |--------------------------------------------------------------------------
+    | UPDATE POSITION WITHOUT
+    | CHANGING VISIBILITY
+    |--------------------------------------------------------------------------
+    */
 
-    scrollTicking = false
+    else if (
+      Math.abs(
+        scrollDifference
+      ) >= 5
+    ) {
+      lastPageScrollY =
+        currentScrollY
+    }
+
+    scrollTicking =
+      false
   })
 }
 
@@ -519,51 +662,44 @@ const handleEscape = (
   event: KeyboardEvent
 ) => {
   if (
-    event.key === 'Escape'
-  ) {
-    closeMobileMenu()
-
-    closeDesktopDropdown()
-  }
-}
-
-/*
-|--------------------------------------------------------------------------
-| BODY SCROLL
-|--------------------------------------------------------------------------
-*/
-
-const updateBodyScroll = () => {
-  if (
-    typeof document === 'undefined'
+    event.key !==
+    'Escape'
   ) {
     return
   }
 
-  document.body.style.overflow =
-    mobileMenuOpen.value
-      ? 'hidden'
-      : ''
+  closeMobileMenu()
+
+  closeDesktopDropdown()
 }
 
 /*
 |--------------------------------------------------------------------------
 | WATCH MOBILE MENU
 |--------------------------------------------------------------------------
+|
+| Extra protection.
+|
+| Even if menu state changes somewhere
+| else in the component, body scrolling
+| will always be correctly restored.
+|
 */
 
-const openMobileMenu = async () => {
-  mobileMenuOpen.value = true
-
-  showMobileUpcoming.value =
-    true
-
-  lastScrollTop = 0
-
-  await nextTick()
-
-  updateBodyScroll()
-}
+watch(
+  mobileMenuOpen,
+  (
+    isOpen
+  ) => {
+    if (
+      isOpen
+    ) {
+      lockBodyScroll()
+    } else {
+      unlockBodyScroll()
+    }
+  }
+)
 
 /*
 |--------------------------------------------------------------------------
@@ -578,19 +714,23 @@ onMounted(() => {
   |--------------------------------------------------------------------------
   */
 
-  timer = setInterval(() => {
-    currentTime.value =
-      Date.now()
-  }, 1000)
+  timer =
+    setInterval(() => {
+      currentTime.value =
+        Date.now()
+    }, 1000)
 
   /*
   |--------------------------------------------------------------------------
-  | INITIAL SCROLL
+  | INITIAL SCROLL POSITION
   |--------------------------------------------------------------------------
   */
 
   lastPageScrollY =
-    window.scrollY
+    Math.max(
+      0,
+      window.scrollY
+    )
 
   /*
   |--------------------------------------------------------------------------
@@ -636,10 +776,15 @@ onBeforeUnmount(() => {
   |--------------------------------------------------------------------------
   */
 
-  if (timer) {
-    clearInterval(timer)
+  if (
+    timer
+  ) {
+    clearInterval(
+      timer
+    )
 
-    timer = null
+    timer =
+      null
   }
 
   /*
@@ -677,20 +822,13 @@ onBeforeUnmount(() => {
 
   /*
   |--------------------------------------------------------------------------
-  | BODY SCROLL RESET
+  | ALWAYS RESTORE BODY SCROLL
   |--------------------------------------------------------------------------
   */
 
-  if (
-    typeof document !==
-    'undefined'
-  ) {
-    document.body.style.overflow =
-      ''
-  }
+  unlockBodyScroll()
 })
 </script>
-
 
 <template>
 
@@ -817,27 +955,25 @@ onBeforeUnmount(() => {
 
 
     <!-- ============================================================
-         MOBILE HEADER
-         IMPORTANT: THIS MUST COME BEFORE EVENT BAR
+     MOBILE HEADER
+     IMPORTANT: THIS MUST COME BEFORE EVENT BAR
     ============================================================ -->
 
     <div
-      class="relative z-[70] border-b border-slate-200 bg-white lg:hidden"
+      class="relative border-b border-slate-200 bg-white lg:hidden"
     >
 
       <div
         class="flex h-[72px] items-center justify-between gap-3 px-4"
       >
 
-
         <!-- ======================================================
-             LEFT
+            LEFT
         ======================================================= -->
 
         <div
           class="flex min-w-0 flex-1 items-center gap-3"
         >
-
 
           <!-- MENU -->
 
@@ -853,22 +989,21 @@ onBeforeUnmount(() => {
           </button>
 
 
-
           <!-- LOGO -->
 
           <NuxtLink
             to="/"
             class="flex shrink-0 items-center"
+            @click="closeMobileMenu"
           >
 
             <img
               src="/images/hero/logo.jpeg"
-              alt="Karate Federation of Nigeria (KFN) Federation"
+              alt="Karate Federation of Nigeria (KFN)"
               class="h-10 w-10 rounded-xl object-contain"
             />
 
           </NuxtLink>
-
 
 
           <!-- NAME -->
@@ -876,6 +1011,7 @@ onBeforeUnmount(() => {
           <NuxtLink
             to="/"
             class="min-w-0"
+            @click="closeMobileMenu"
           >
 
             <span
@@ -898,7 +1034,7 @@ onBeforeUnmount(() => {
 
 
         <!-- ======================================================
-             COUNTDOWN
+            COUNTDOWN
         ======================================================= -->
 
         <div
@@ -922,7 +1058,9 @@ onBeforeUnmount(() => {
 
 
 
-        <!-- LIVE -->
+        <!-- ======================================================
+            LIVE EVENT
+        ======================================================= -->
 
         <div
           v-else
