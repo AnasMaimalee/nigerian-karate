@@ -484,7 +484,7 @@ const handlePageScroll = () => {
     lastPageScrollY =
       currentScrollY
 
-    scrollTicking = fase
+    scrollTicking = false
   })
 }
 
