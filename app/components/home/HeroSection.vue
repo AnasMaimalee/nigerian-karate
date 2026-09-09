@@ -1,131 +1,613 @@
 <script setup lang="ts">
-import { ArrowRight, ChevronDown, Play, Trophy, Zap } from 'lucide-vue-next'
-import { images } from '~/data/images'
+import {
+  ChevronLeft,
+  ChevronRight,
+} from 'lucide-vue-next'
+
+import {
+  computed,
+  onBeforeUnmount,
+  onMounted,
+  ref,
+} from 'vue'
+
+/*
+|--------------------------------------------------------------------------
+| KFN HERO LEADERSHIP CAROUSEL
+|--------------------------------------------------------------------------
+|
+| All images come directly from:
+|
+| public/images/staff/
+|
+|--------------------------------------------------------------------------
+*/
+
+interface HeroLeader {
+  image: string
+  name: string
+  role: string
+  description: string
+}
+
+/*
+|--------------------------------------------------------------------------
+| LEADERSHIP SLIDES
+|--------------------------------------------------------------------------
+|
+| The descriptions are written around each person's official role
+| and responsibilities without inventing specific achievements.
+|
+|--------------------------------------------------------------------------
+*/
+
+const slides: HeroLeader[] = [
+  {
+    image: '/images/staff/president.jpg',
+    name: 'Engr. Dr Chukwudi Dimkpa FNSE',
+    role: 'President',
+    description:
+      'Providing strategic leadership and direction for the Karate Federation of Nigeria while driving the development and growth of the sport across the country.',
+  },
+
+  {
+    image: '/images/staff/vice-president.jpg',
+    name: 'DR (Alh) Bashir Maizare',
+    role: '1st Vice President',
+    description:
+      'Supporting the federation’s leadership and contributing to effective administration, coordination and continued development of Karate in Nigeria.',
+  },
+
+  {
+    image: '/images/staff/AFFAN Rep.jpg',
+    name: 'Hajiya Zanian Saleh',
+    role: 'AFFAN Representative',
+    description:
+      'Representing the interests of the federation through national stakeholder engagement and strengthening collaboration within Nigeria’s sporting community.',
+  },
+
+  {
+    image: '/images/staff/shariff.jpeg',
+    name: 'Dr. Mustapha Sharif Ramadan',
+    role: 'Chairman, Publicity ICT & Media Technical Support',
+    description:
+      'Supporting the federation through publicity, information technology and media coordination while helping connect the federation with athletes, supporters and the wider public.',
+  },
+
+  {
+    image: '/images/staff/agaras.jpeg',
+    name: 'H.E Silas A. Agara',
+    role: 'UFAK African 4th Vice President',
+    description:
+      'Providing continental leadership and representation while strengthening Nigeria’s connection with the wider African Karate community.',
+  },
+
+  {
+    image: '/images/staff/kehinde fausari north central rep.jpg',
+    name: 'Kehinde Fausari Yetunde Dehinde',
+    role: 'North Central Representative',
+    description:
+      'Representing the North Central region and supporting stronger participation, coordination and development of Karate across the region.',
+  },
+
+  {
+    image: '/images/staff/jede.jpeg',
+    name: 'Mr. Dave Jegede (Shihan)',
+    role: 'KFN Technical Director',
+    description:
+      'Providing technical direction and supporting the development of athletes, coaches and competitive Karate standards within the federation.',
+  },
+
+  {
+    image: '/images/staff/sport-chairman.webp',
+    name: 'Shehu Dikko',
+    role: 'Chairman, National Sports Commission',
+    description:
+      'Providing leadership within Nigeria’s national sports administration and supporting the broader development and organisation of sport in the country.',
+  },
+
+  {
+    image: '/images/staff/bukola-olopade.webp',
+    name: 'Hon. Bukola Olopade',
+    role: 'Director General, National Sports Commission',
+    description:
+      'Leading the administrative direction of the national sports system and supporting initiatives that contribute to the advancement of Nigerian sport.',
+  },
+
+  {
+    image: '/images/staff/suzuki.png',
+    name: 'His Excellency Suzuki Hideo',
+    role: 'Japanese Ambassador to Nigeria',
+    description:
+      'Representing Japan in Nigeria and contributing to the diplomatic relationship and international cooperation that can strengthen sporting and cultural connections.',
+  },
+]
+
+/*
+|--------------------------------------------------------------------------
+| CAROUSEL STATE
+|--------------------------------------------------------------------------
+*/
+
+const currentSlide = ref(0)
+
+const touchStartX = ref(0)
+const touchEndX = ref(0)
+
+let carouselTimer: ReturnType<typeof setInterval> | null = null
+
+/*
+|--------------------------------------------------------------------------
+| CURRENT SLIDE
+|--------------------------------------------------------------------------
+*/
+
+const currentLeader = computed(() => {
+  return slides[currentSlide.value] ?? slides[0]
+})
+
+/*
+|--------------------------------------------------------------------------
+| NEXT SLIDE
+|--------------------------------------------------------------------------
+*/
+
+const nextSlide = () => {
+  currentSlide.value =
+    (currentSlide.value + 1) % slides.length
+}
+
+/*
+|--------------------------------------------------------------------------
+| PREVIOUS SLIDE
+|--------------------------------------------------------------------------
+*/
+
+const previousSlide = () => {
+  currentSlide.value =
+    (currentSlide.value - 1 + slides.length) %
+    slides.length
+}
+
+/*
+|--------------------------------------------------------------------------
+| GO TO SLIDE
+|--------------------------------------------------------------------------
+*/
+
+const goToSlide = (index: number) => {
+  if (
+    index < 0 ||
+    index >= slides.length
+  ) {
+    return
+  }
+
+  currentSlide.value = index
+
+  restartCarousel()
+}
+
+/*
+|--------------------------------------------------------------------------
+| START AUTOMATIC CAROUSEL
+|--------------------------------------------------------------------------
+|
+| IMPORTANT:
+| The carousel does NOT pause on mouse hover.
+|
+| It will continue moving automatically.
+|
+|--------------------------------------------------------------------------
+*/
+
+const startCarousel = () => {
+  stopCarousel()
+
+  carouselTimer = setInterval(() => {
+    nextSlide()
+  }, 5000)
+}
+
+/*
+|--------------------------------------------------------------------------
+| STOP CAROUSEL
+|--------------------------------------------------------------------------
+*/
+
+const stopCarousel = () => {
+  if (carouselTimer) {
+    clearInterval(carouselTimer)
+    carouselTimer = null
+  }
+}
+
+/*
+|--------------------------------------------------------------------------
+| RESTART AFTER MANUAL CONTROL
+|--------------------------------------------------------------------------
+*/
+
+const restartCarousel = () => {
+  startCarousel()
+}
+
+/*
+|--------------------------------------------------------------------------
+| TOUCH START
+|--------------------------------------------------------------------------
+*/
+
+const handleTouchStart = (event: TouchEvent) => {
+  if (!event.touches.length) return
+
+  touchStartX.value =
+    event.touches[0].clientX
+
+  touchEndX.value =
+    event.touches[0].clientX
+}
+
+/*
+|--------------------------------------------------------------------------
+| TOUCH MOVE
+|--------------------------------------------------------------------------
+*/
+
+const handleTouchMove = (event: TouchEvent) => {
+  if (!event.touches.length) return
+
+  touchEndX.value =
+    event.touches[0].clientX
+}
+
+/*
+|--------------------------------------------------------------------------
+| TOUCH END
+|--------------------------------------------------------------------------
+*/
+
+const handleTouchEnd = () => {
+  const distance =
+    touchStartX.value -
+    touchEndX.value
+
+  const minimumSwipeDistance = 50
+
+  /*
+   * Swipe left
+   */
+  if (distance > minimumSwipeDistance) {
+    nextSlide()
+    restartCarousel()
+  }
+
+  /*
+   * Swipe right
+   */
+  if (distance < -minimumSwipeDistance) {
+    previousSlide()
+    restartCarousel()
+  }
+
+  touchStartX.value = 0
+  touchEndX.value = 0
+}
+
+/*
+|--------------------------------------------------------------------------
+| KEYBOARD CONTROL
+|--------------------------------------------------------------------------
+*/
+
+const handleKeydown = (event: KeyboardEvent) => {
+  if (event.key === 'ArrowRight') {
+    nextSlide()
+    restartCarousel()
+  }
+
+  if (event.key === 'ArrowLeft') {
+    previousSlide()
+    restartCarousel()
+  }
+}
+
+/*
+|--------------------------------------------------------------------------
+| LIFECYCLE
+|--------------------------------------------------------------------------
+*/
+
+onMounted(() => {
+  startCarousel()
+
+  window.addEventListener(
+    'keydown',
+    handleKeydown
+  )
+})
+
+onBeforeUnmount(() => {
+  stopCarousel()
+
+  window.removeEventListener(
+    'keydown',
+    handleKeydown
+  )
+})
 </script>
 
 <template>
-  <section class="relative min-h-[780px] overflow-hidden bg-surface-dark text-white">
-    <div class="absolute inset-0">
-      <picture class="block h-full w-full">
-  <source
-    media="(max-width: 640px)"
-    :srcset="images.hero.mobile"
+  <!-- =========================================================
+       KFN LEADERSHIP HERO
+  ========================================================== -->
+
+  <section
+    class="relative h-[calc(100vh-196px)] min-h-[620px] w-full overflow-hidden bg-[#020805] sm:min-h-[680px] lg:h-[780px]"
+    @touchstart="handleTouchStart"
+    @touchmove="handleTouchMove"
+    @touchend="handleTouchEnd"
   >
 
-  <img
-    :src="images.hero.main"
-    alt="Karate Federation of Nigeria (KFN)athletes"
-    class="h-full w-full object-cover object-center sm:object-[center_35%] lg:object-[center_30%]"
-  >
-</picture>
+    <!-- =======================================================
+         BACKGROUND BLURRED IMAGE
+         
+         This creates a premium background using the same
+         photograph without cropping the main portrait.
+    ======================================================== -->
 
-      <div class="absolute inset-0 bg-surface-dark/85"></div>
-      <div class="absolute inset-0 bg-gradient-to-r from-surface-dark via-surface-dark/75 to-surface-dark/20"></div>
-      <div class="absolute inset-0 bg-gradient-to-t from-surface-dark via-transparent to-transparent"></div>
-    </div>
+    <Transition
+      mode="out-in"
+      enter-active-class="transition-opacity duration-1000 ease-out"
+      enter-from-class="opacity-0"
+      enter-to-class="opacity-100"
+      leave-active-class="transition-opacity duration-700 ease-in"
+      leave-from-class="opacity-100"
+      leave-to-class="opacity-0"
+    >
 
-    <div class="absolute -right-32 top-20 h-96 w-96 rounded-full bg-primary/20 blur-3xl"></div>
+      <div
+        :key="`background-${currentLeader.image}`"
+        class="absolute inset-0 overflow-hidden"
+      >
 
-    <div class="container-nkf relative z-10 flex min-h-[780px] items-center section-padding">
-      <div class="grid w-full items-center gap-16 lg:grid-cols-[1.2fr_0.8fr]">
-        <div>
-          <div class="mb-8 inline-flex items-center gap-3 rounded-full border border-white/10 bg-white/5 px-4 py-2 backdrop-blur-xl">
-            <span class="relative flex h-2.5 w-2.5">
-              <span class="absolute inline-flex h-full w-full animate-ping rounded-full bg-primary opacity-75"></span>
-              <span class="relative inline-flex h-2.5 w-2.5 rounded-full bg-primary"></span>
-            </span>
+        <img
+          :src="currentLeader.image"
+          alt=""
+          aria-hidden="true"
+          class="absolute inset-[-10%] h-[120%] w-[120%] scale-110 object-cover object-center blur-3xl"
+        />
 
-            <span class="text-xs font-black uppercase tracking-[0.25em] text-white/70">
-              Karate Federation of Nigeria (KFN) Federation
-            </span>
-          </div>
+        <div
+          class="absolute inset-0 bg-[#06130b]/65"
+        />
 
-          <h1 class="max-w-4xl text-5xl font-black leading-[0.95] tracking-tight sm:text-6xl md:text-7xl xl:text-8xl">
-            THE FUTURE OF
-            <span class="mt-2 block text-primary">
-              Karate Federation of Nigeria (KFN).
-            </span>
-          </h1>
-
-          <p class="mt-8 max-w-2xl text-base leading-8 text-white/65 sm:text-lg">
-            Building champions. Empowering athletes. Connecting Nigeria to the global world of karate.
-          </p>
-
-          <div class="mt-10 flex flex-wrap gap-4">
-            <NuxtLink to="/events" class="group inline-flex items-center gap-3 rounded-xl bg-primary px-7 py-4 text-sm font-black uppercase tracking-wide text-primary-foreground transition duration-300 hover:-translate-y-1 hover:bg-primary-hover hover:shadow-2xl">
-              Explore Events
-              <ArrowRight :size="18" class="transition duration-300 group-hover:translate-x-1" />
-            </NuxtLink>
-
-            <NuxtLink to="/rankings" class="inline-flex items-center gap-3 rounded-xl border border-white/20 bg-white/5 px-7 py-4 text-sm font-black uppercase tracking-wide text-white backdrop-blur-xl transition hover:border-primary hover:bg-primary/10">
-              View Rankings
-              <Trophy :size="18" />
-            </NuxtLink>
-          </div>
-
-          <div class="mt-14 grid max-w-2xl grid-cols-3 gap-4 border-t border-white/10 pt-8">
-            <div>
-              <div class="text-2xl font-black sm:text-3xl">500+</div>
-              <div class="mt-2 text-[10px] font-bold uppercase tracking-widest text-white/40">Athletes</div>
-            </div>
-
-            <div>
-              <div class="text-2xl font-black sm:text-3xl">36</div>
-              <div class="mt-2 text-[10px] font-bold uppercase tracking-widest text-white/40">States</div>
-            </div>
-
-            <div>
-              <div class="text-2xl font-black sm:text-3xl">50+</div>
-              <div class="mt-2 text-[10px] font-bold uppercase tracking-widest text-white/40">Events</div>
-            </div>
-          </div>
-        </div>
-
-        <div class="hidden lg:flex lg:justify-end">
-          <div class="relative w-full max-w-sm">
-            <div class="absolute -inset-4 rounded-[2rem] bg-primary/20 blur-2xl"></div>
-
-            <div class="relative overflow-hidden rounded-[2rem] border border-white/10 bg-white/10 p-6 backdrop-blur-2xl">
-              <div class="flex items-center justify-between">
-                <div class="rounded-xl bg-primary/20 p-3 text-primary">
-                  <Zap :size="24" />
-                </div>
-
-                <span class="rounded-full bg-red-500 px-3 py-1 text-[10px] font-black uppercase tracking-widest text-white">
-                  Live
-                </span>
-              </div>
-
-              <h3 class="mt-8 text-2xl font-black leading-tight">
-                Experience Karate Federation of Nigeria (KFN).
-              </h3>
-
-              <p class="mt-4 text-sm leading-7 text-white/60">
-                Follow national competitions, discover elite athletes and watch the next generation of champions rise.
-              </p>
-
-              <div class="mt-8 flex items-center gap-3 border-t border-white/10 pt-6">
-                <div class="flex h-11 w-11 items-center justify-center rounded-full bg-primary text-primary-foreground">
-                  <Play :size="17" fill="currentColor" />
-                </div>
-
-                <div>
-                  <div class="text-sm font-bold">NKF TV</div>
-                  <div class="text-xs text-white/40">Watch latest highlights</div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
       </div>
+
+    </Transition>
+
+    <!-- =======================================================
+         MAIN IMAGE
+         
+         object-contain ensures that the person's head,
+         shoulders and body are not unnecessarily cropped.
+    ======================================================== -->
+
+    <Transition
+      mode="out-in"
+      enter-active-class="transition-opacity duration-1000 ease-out"
+      enter-from-class="opacity-0"
+      enter-to-class="opacity-100"
+      leave-active-class="transition-opacity duration-700 ease-in"
+      leave-from-class="opacity-100"
+      leave-to-class="opacity-0"
+    >
+
+      <div
+        :key="`main-${currentLeader.image}`"
+        class="absolute inset-0 flex items-center justify-center"
+      >
+
+        <img
+          :src="currentLeader.image"
+          :alt="currentLeader.name"
+          class="h-full w-full object-contain object-center"
+        />
+
+      </div>
+
+    </Transition>
+
+    <!-- =======================================================
+         DARK CINEMATIC OVERLAY
+    ======================================================== -->
+
+    <div
+      class="pointer-events-none absolute inset-0 bg-gradient-to-r from-[#020805]/75 via-transparent to-[#020805]/35"
+    />
+
+    <!-- =======================================================
+         BOTTOM GRADIENT
+    ======================================================== -->
+
+    <div
+      class="pointer-events-none absolute inset-x-0 bottom-0 h-[55%] bg-gradient-to-t from-[#020805] via-[#020805]/45 to-transparent"
+    />
+
+    <!-- =======================================================
+         GREEN CINEMATIC GLOW
+    ======================================================== -->
+
+    <div
+      class="pointer-events-none absolute bottom-[-180px] right-[-100px] h-[500px] w-[500px] rounded-full bg-green-500/15 blur-[120px]"
+    />
+
+    <!-- =======================================================
+         TEXT INFORMATION
+         
+         This changes automatically with every image.
+    ======================================================== -->
+
+    <Transition
+      mode="out-in"
+      enter-active-class="transition-all duration-700 ease-out"
+      enter-from-class="translate-y-5 opacity-0"
+      enter-to-class="translate-y-0 opacity-100"
+      leave-active-class="transition-all duration-300 ease-in"
+      leave-from-class="translate-y-0 opacity-100"
+      leave-to-class="-translate-y-3 opacity-0"
+    >
+
+      <div
+        :key="`text-${currentLeader.image}`"
+        class="absolute bottom-24 left-0 right-0 z-20"
+      >
+
+        <div
+          class="mx-auto w-full max-w-[1500px] px-5 sm:px-8 lg:px-12"
+        >
+
+          <div
+            class="max-w-3xl"
+          >
+
+            <!-- =================================================
+                 CATEGORY
+            ================================================== -->
+
+            <div
+              class="mb-4 flex items-center gap-3"
+            >
+
+              <span
+                class="h-1 w-10 rounded-full bg-green-400"
+              />
+
+              <span
+                class="text-[10px] font-black uppercase tracking-[0.25em] text-green-300 sm:text-xs"
+              >
+                Karate Federation of Nigeria
+              </span>
+
+            </div>
+
+            <!-- =================================================
+                 NAME
+            ================================================== -->
+
+            <h2
+              class="text-3xl font-black leading-[1.05] tracking-tight text-white drop-shadow-2xl sm:text-4xl md:text-5xl lg:text-6xl"
+            >
+              {{ currentLeader.name }}
+            </h2>
+
+            <!-- =================================================
+                 ROLE
+            ================================================== -->
+
+            <p
+              class="mt-3 text-base font-black uppercase tracking-wide text-green-400 sm:text-lg"
+            >
+              {{ currentLeader.role }}
+            </p>
+
+            <!-- =================================================
+                 DESCRIPTION
+            ================================================== -->
+
+            <p
+              class="mt-4 max-w-2xl text-sm leading-7 text-white/75 sm:text-base sm:leading-8"
+            >
+              {{ currentLeader.description }}
+            </p>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </Transition>
+
+    <!-- =======================================================
+         PREVIOUS BUTTON
+    ======================================================== -->
+
+    <button
+      type="button"
+      aria-label="Previous leadership image"
+      class="absolute left-4 top-1/2 z-40 flex h-12 w-12 -translate-y-1/2 items-center justify-center rounded-full border border-white/25 bg-black/30 text-white shadow-2xl backdrop-blur-md transition duration-300 hover:border-green-400 hover:bg-green-500 sm:left-7 sm:h-14 sm:w-14"
+      @click.stop="previousSlide(); restartCarousel()"
+    >
+
+      <ChevronLeft
+        :size="24"
+      />
+
+    </button>
+
+    <!-- =======================================================
+         NEXT BUTTON
+    ======================================================== -->
+
+    <button
+      type="button"
+      aria-label="Next leadership image"
+      class="absolute right-4 top-1/2 z-40 flex h-12 w-12 -translate-y-1/2 items-center justify-center rounded-full border border-white/25 bg-black/30 text-white shadow-2xl backdrop-blur-md transition duration-300 hover:border-green-400 hover:bg-green-500 sm:right-7 sm:h-14 sm:w-14"
+      @click.stop="nextSlide(); restartCarousel()"
+    >
+
+      <ChevronRight
+        :size="24"
+      />
+
+    </button>
+
+    <!-- =======================================================
+         SLIDE INDICATORS
+    ======================================================== -->
+
+    <div
+      class="absolute bottom-8 left-1/2 z-40 flex -translate-x-1/2 items-center gap-2 rounded-full border border-white/15 bg-black/35 px-4 py-3 shadow-xl backdrop-blur-md"
+    >
+
+      <button
+        v-for="(slide, index) in slides"
+        :key="slide.image"
+        type="button"
+        :aria-label="`Show ${slide.name}`"
+        class="h-2 rounded-full transition-all duration-300"
+        :class="
+          currentSlide === index
+            ? 'w-8 bg-green-400'
+            : 'w-2 bg-white/35 hover:bg-white/70'
+        "
+        @click.stop="goToSlide(index)"
+      />
+
     </div>
 
-    <a href="#federation-intro" class="absolute bottom-8 left-1/2 z-20 hidden -translate-x-1/2 flex-col items-center gap-3 text-white/50 transition hover:text-primary md:flex">
-      <span class="text-[9px] font-black uppercase tracking-[0.3em]">
-        Discover
-      </span>
+    <!-- =======================================================
+         SLIDE NUMBER
+    ======================================================== -->
 
-      <ChevronDown :size="20" class="animate-bounce" />
-    </a>
+    <div
+      class="absolute bottom-9 right-7 z-40 hidden text-right md:block"
+    >
+
+      <div
+        class="text-2xl font-black tabular-nums text-white"
+      >
+        {{ String(currentSlide + 1).padStart(2, '0') }}
+      </div>
+
+      <div
+        class="text-[9px] font-black uppercase tracking-[0.25em] text-white/40"
+      >
+        / {{ String(slides.length).padStart(2, '0') }}
+      </div>
+
+    </div>
+
   </section>
 </template>
