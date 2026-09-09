@@ -111,7 +111,7 @@ const topRankings = computed(() => {
          NEWLY ELECTED NKF LEADERSHIP
     ============================================================ -->
 
-    <AboutLeadership />
+    <!-- <AboutLeadership /> -->
 
 
     <!-- ============================================================

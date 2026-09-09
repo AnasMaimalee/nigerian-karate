@@ -1425,7 +1425,7 @@ onBeforeUnmount(() => {
             class="ml-1 inline-flex items-center gap-2 rounded-xl bg-slate-950 px-5 py-3.5 text-[11px] font-black uppercase tracking-wide text-white shadow-lg transition duration-300 hover:-translate-y-0.5 hover:bg-primary"
           >
 
-            Contact NKF
+            Contact KFN
 
             <ChevronRight
               :size="16"
