@@ -127,7 +127,7 @@ import {
               <span
                 class="px-2 text-[9px] font-black uppercase tracking-[0.2em] text-white/40"
               >
-                Explore NKF
+                Explore KFN
               </span>
 
               <div class="mt-4 space-y-2">
