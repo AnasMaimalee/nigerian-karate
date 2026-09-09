@@ -207,7 +207,7 @@ const navigationItems = [
   },
 
   {
-    label: 'About NKF',
+    label: 'About KFN',
     to: '/about'
   },
 
