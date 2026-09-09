@@ -203,33 +203,39 @@ const closeAllDropdowns = () => {
 const navigationItems = [
   {
     label: 'Home',
-    to: '/'
+    to: '/',
+    icon: 'House'
   },
 
   {
     label: 'About KFN',
-    to: '/about'
+    to: '/about',
+    icon: 'Info'
   },
 
   {
     label: 'Events',
     to: '/events',
+    icon: 'CalendarDays',
     dropdown: false
   },
 
   {
     label: 'Athletes',
-    to: '/athletes'
+    to: '/athletes',
+    icon: 'Users'
   },
 
   {
     label: 'Rankings',
-    to: '/rankings'
+    to: '/rankings',
+    icon: 'Trophy'
   },
 
   {
     label: 'News',
     to: '/news',
+    icon: 'Newspaper',
     dropdown: true,
 
     children: [
@@ -249,8 +255,7 @@ const navigationItems = [
       },
 
       {
-        label:
-          'Karate Federation of Nigeria (KFN) Journal',
+        label: 'Karate Federation of Nigeria (KFN) Journal',
         to: '/news/journal'
       },
 
@@ -268,22 +273,46 @@ const navigationItems = [
 
   {
     label: 'Gallery',
-    to: '/gallery'
+    to: '/gallery',
+    icon: 'Images'
   },
 
   {
     label: 'Documents',
-    to: '/documents'
+    to: '/documents',
+    icon: 'FileText'
   },
 
   {
     label: 'Anti Doping',
-    to: '/anti-doping'
+    to: '/anti-doping',
+    icon: 'ShieldCheck'
   },
 
   {
     label: 'Contact',
-    to: '/contact'
+    to: '/contact',
+    icon: 'Phone'
+  },
+
+  /*
+  |--------------------------------------------------------------------------
+  | AUTHENTICATION
+  |--------------------------------------------------------------------------
+  */
+
+  {
+    label: 'Login',
+    to: '/login',
+    icon: 'LogIn',
+    auth: true
+  },
+
+  {
+    label: 'Sign Up',
+    to: '/signup',
+    icon: 'UserPlus',
+    auth: true
   }
 ]
 
@@ -1061,34 +1090,7 @@ onBeforeUnmount(() => {
           />
 
         </NuxtLink>
-         <!-- ======================================================
-              AUTH ACTIONS
-          ======================================================= -->
-
-          <div class="ml-3 flex items-center gap-2 border-l border-slate-200 pl-3">
-
-            <!-- LOGIN -->
-
-            <NuxtLink
-              to="/login"
-              class="inline-flex items-center justify-center rounded-xl border border-slate-200 bg-white px-4 py-3 text-xs font-black uppercase tracking-wide text-slate-800 transition-all duration-200 hover:border-green-600 hover:bg-green-50 hover:text-green-700"
-            >
-              Login
-            </NuxtLink>
-
-
-            <!-- SIGN UP -->
-
-            <NuxtLink
-              to="/signup"
-              class="inline-flex items-center gap-2 rounded-xl bg-green-600 px-5 py-3 text-xs font-black uppercase tracking-wide text-white shadow-lg shadow-green-600/20 transition-all duration-200 hover:-translate-y-0.5 hover:bg-green-700"
-            >
-              Sign Up
-
-              <ArrowRight :size="15" />
-            </NuxtLink>
-
-          </div>
+       
 
 
         <!-- ======================================================
@@ -1319,84 +1321,7 @@ onBeforeUnmount(() => {
 
 
 
-        <!-- ======================================================
-             DESKTOP ACTIONS
-        ======================================================= -->
-
-        <div
-          class="hidden shrink-0 items-center gap-2 xl:flex"
-        >
-
-
-          <!-- SEARCH -->
-
-          <NuxtLink
-            to="/search"
-            class="flex h-11 w-11 items-center justify-center rounded-xl text-slate-600 transition duration-300 hover:bg-slate-100 hover:text-primary"
-          >
-
-            <Search
-              :size="20"
-            />
-
-          </NuxtLink>
-
-
-
-          <!-- ANNOUNCEMENTS -->
-
-          <NuxtLink
-            to="/announcements"
-            class="group relative flex h-12 w-12 items-center justify-center rounded-2xl border border-slate-200 bg-white text-slate-700 shadow-sm transition duration-300 hover:-translate-y-0.5 hover:border-primary/30 hover:bg-primary hover:text-white hover:shadow-lg"
-          >
-
-            <BellRing
-              :size="21"
-              class="transition duration-300 group-hover:rotate-12"
-            />
-
-
-            <span
-              class="absolute right-1.5 top-1.5 flex h-3 w-3"
-            >
-
-              <span
-                class="absolute inline-flex h-full w-full animate-ping rounded-full bg-red-500 opacity-70"
-              />
-
-              <span
-                class="relative inline-flex h-3 w-3 rounded-full border-2 border-white bg-red-500"
-              />
-
-            </span>
-
-
-            <span
-              class="absolute -right-2 -top-2 flex h-6 min-w-6 items-center justify-center rounded-full border-2 border-white bg-red-600 px-1.5 text-[10px] font-black text-white shadow-lg"
-            >
-              {{ announcementCount }}
-            </span>
-
-          </NuxtLink>
-
-
-
-          <!-- CONTACT -->
-
-          <NuxtLink
-            to="/contact"
-            class="ml-1 inline-flex items-center gap-2 rounded-xl bg-slate-950 px-5 py-3.5 text-[11px] font-black uppercase tracking-wide text-white shadow-lg transition duration-300 hover:-translate-y-0.5 hover:bg-primary"
-          >
-
-            Contact KFN
-
-            <ChevronRight
-              :size="16"
-            />
-
-          </NuxtLink>
-
-        </div>
+       
 
 
 
