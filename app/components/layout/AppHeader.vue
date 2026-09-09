@@ -705,46 +705,16 @@ watch(
 |--------------------------------------------------------------------------
 | LIFECYCLE
 |--------------------------------------------------------------------------
-*/
-
-onMounted(() => {
+*/onMounted(() => {
   /*
   |--------------------------------------------------------------------------
   | COUNTDOWN
   |--------------------------------------------------------------------------
   */
 
-  timer =
-    setInterval(() => {
-      currentTime.value =
-        Date.now()
-    }, 1000)
-
-  /*
-  |--------------------------------------------------------------------------
-  | INITIAL SCROLL POSITION
-  |--------------------------------------------------------------------------
-  */
-
-  lastPageScrollY =
-    Math.max(
-      0,
-      window.scrollY
-    )
-
-  /*
-  |--------------------------------------------------------------------------
-  | PAGE SCROLL
-  |--------------------------------------------------------------------------
-  */
-
-  window.addEventListener(
-    'scroll',
-    handlePageScroll,
-    {
-      passive: true
-    }
-  )
+  timer = setInterval(() => {
+    currentTime.value = Date.now()
+  }, 1000)
 
   /*
   |--------------------------------------------------------------------------
@@ -776,27 +746,10 @@ onBeforeUnmount(() => {
   |--------------------------------------------------------------------------
   */
 
-  if (
-    timer
-  ) {
-    clearInterval(
-      timer
-    )
-
-    timer =
-      null
+  if (timer) {
+    clearInterval(timer)
+    timer = null
   }
-
-  /*
-  |--------------------------------------------------------------------------
-  | PAGE SCROLL
-  |--------------------------------------------------------------------------
-  */
-
-  window.removeEventListener(
-    'scroll',
-    handlePageScroll
-  )
 
   /*
   |--------------------------------------------------------------------------
@@ -954,145 +907,128 @@ onBeforeUnmount(() => {
 
 
 
-    <!-- ============================================================
+   <!-- ============================================================
      MOBILE HEADER
      IMPORTANT: THIS MUST COME BEFORE EVENT BAR
     ============================================================ -->
 
-    <div
-      class="relative border-b border-slate-200 bg-white lg:hidden"
+<div
+  class="relative z-[70] border-b border-slate-200 bg-white lg:hidden"
+>
+  <div
+    class="flex h-[72px] items-center gap-3 px-3 sm:px-4"
+  >
+
+    <!-- ======================================================
+         MENU
+    ======================================================= -->
+
+    <button
+      type="button"
+      class="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl border border-slate-200 bg-slate-50 text-slate-950 shadow-sm transition-all duration-200 hover:border-green-600 hover:bg-green-600 hover:text-white active:scale-95"
+      aria-label="Open navigation"
+      @click="openMobileMenu"
+    >
+      <Menu :size="23" />
+    </button>
+
+
+    <!-- ======================================================
+         BRAND
+    ======================================================= -->
+
+    <NuxtLink
+      to="/"
+      class="flex min-w-0 flex-1 items-center gap-2.5"
+      @click="closeMobileMenu"
     >
 
+      <!-- LOGO -->
+
       <div
-        class="flex h-[72px] items-center justify-between gap-3 px-4"
+        class="flex h-10 w-10 shrink-0 items-center justify-center overflow-hidden rounded-xl border border-slate-200 bg-white shadow-sm"
       >
-
-        <!-- ======================================================
-            LEFT
-        ======================================================= -->
-
-        <div
-          class="flex min-w-0 flex-1 items-center gap-3"
-        >
-
-          <!-- MENU -->
-
-          <button
-            type="button"
-            class="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl border border-slate-200 bg-slate-50 text-slate-950 shadow-sm transition duration-200 hover:border-primary hover:bg-primary hover:text-white active:scale-95"
-            aria-label="Open navigation"
-            @click="openMobileMenu"
-          >
-            <Menu
-              :size="23"
-            />
-          </button>
-
-
-          <!-- LOGO -->
-
-          <NuxtLink
-            to="/"
-            class="flex shrink-0 items-center"
-            @click="closeMobileMenu"
-          >
-
-            <img
-              src="/images/hero/logo.jpeg"
-              alt="Karate Federation of Nigeria (KFN)"
-              class="h-10 w-10 rounded-xl object-contain"
-            />
-
-          </NuxtLink>
-
-
-          <!-- NAME -->
-
-          <NuxtLink
-            to="/"
-            class="min-w-0"
-            @click="closeMobileMenu"
-          >
-
-            <span
-              class="block truncate text-[13px] font-black uppercase leading-tight tracking-tight text-slate-950"
-            >
-              Karate Federation of Nigeria (KFN)
-            </span>
-
-
-            <span
-              class="mt-0.5 block text-[8px] font-black uppercase tracking-[0.22em] text-primary"
-            >
-              Federation
-            </span>
-
-          </NuxtLink>
-
-        </div>
-
-
-
-        <!-- ======================================================
-            COUNTDOWN
-        ======================================================= -->
-
-        <div
-          v-if="!countdown.expired"
-          class="flex shrink-0 items-center gap-2 rounded-xl bg-primary px-3 py-2.5 text-white shadow-lg shadow-primary/20"
-        >
-
-          <Clock3
-            :size="14"
-            class="opacity-90"
-          />
-
-
-          <span
-            class="text-[11px] font-black tabular-nums tracking-wide"
-          >
-            {{ compactCountdown }}
-          </span>
-
-        </div>
-
-
-
-        <!-- ======================================================
-            LIVE EVENT
-        ======================================================= -->
-
-        <div
-          v-else
-          class="flex shrink-0 items-center gap-2 rounded-xl bg-red-600 px-3 py-2.5 text-white shadow-lg"
-        >
-
-          <span
-            class="relative flex h-2 w-2"
-          >
-
-            <span
-              class="absolute inline-flex h-full w-full animate-ping rounded-full bg-white opacity-70"
-            />
-
-            <span
-              class="relative inline-flex h-2 w-2 rounded-full bg-white"
-            />
-
-          </span>
-
-
-          <span
-            class="text-[10px] font-black uppercase tracking-wider"
-          >
-            Live
-          </span>
-
-        </div>
-
+        <img
+          src="/images/hero/logo.jpeg"
+          alt="Karate Federation of Nigeria (KFN)"
+          class="h-full w-full object-contain"
+        />
       </div>
 
+
+      <!-- NAME -->
+
+      <div class="min-w-0">
+        <span
+          class="block truncate text-[12px] font-black uppercase leading-[1.15] tracking-tight text-slate-950 sm:text-[13px]"
+        >
+          Karate Federation of Nigeria (KFN)
+        </span>
+
+        <span
+          class="mt-1 block text-[8px] font-black uppercase tracking-[0.22em] text-green-700"
+        >
+          Official Federation
+        </span>
+      </div>
+
+    </NuxtLink>
+
+
+    <!-- ======================================================
+         COUNTDOWN / LIVE
+    ======================================================= -->
+
+    <div
+      v-if="!countdown.expired"
+      class="flex shrink-0 items-center gap-1.5 rounded-xl bg-[#06130b] px-2.5 py-2.5 text-white shadow-lg sm:gap-2 sm:px-3"
+    >
+
+      <Clock3
+        :size="14"
+        class="shrink-0 text-green-400"
+      />
+
+      <span
+        class="text-[10px] font-black tabular-nums tracking-wide sm:text-[11px]"
+      >
+        {{ compactCountdown }}
+      </span>
+
     </div>
+
+
+    <!-- ======================================================
+         LIVE EVENT
+    ======================================================= -->
+
+    <div
+      v-else
+      class="flex shrink-0 items-center gap-1.5 rounded-xl bg-red-600 px-3 py-2.5 text-white shadow-lg"
+    >
+
+      <span
+        class="relative flex h-2 w-2 shrink-0"
+      >
+        <span
+          class="absolute inline-flex h-full w-full animate-ping rounded-full bg-white opacity-70"
+        />
+
+        <span
+          class="relative inline-flex h-2 w-2 rounded-full bg-white"
+        />
+      </span>
+
+      <span
+        class="text-[9px] font-black uppercase tracking-[0.14em]"
+      >
+        Live
+      </span>
+
+    </div>
+
+  </div>
+</div>
 
 
 
