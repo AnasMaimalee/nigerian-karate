@@ -912,123 +912,123 @@ onBeforeUnmount(() => {
      IMPORTANT: THIS MUST COME BEFORE EVENT BAR
     ============================================================ -->
 
-<div
-  class="relative z-[70] border-b border-slate-200 bg-white lg:hidden"
->
-  <div
-    class="flex h-[72px] items-center gap-3 px-3 sm:px-4"
-  >
-
-    <!-- ======================================================
-         MENU
-    ======================================================= -->
-
-    <button
-      type="button"
-      class="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl border border-slate-200 bg-slate-50 text-slate-950 shadow-sm transition-all duration-200 hover:border-green-600 hover:bg-green-600 hover:text-white active:scale-95"
-      aria-label="Open navigation"
-      @click="openMobileMenu"
+    <div
+      class="relative z-[70] border-b border-slate-200 bg-white lg:hidden"
     >
-      <Menu :size="23" />
-    </button>
-
-
-    <!-- ======================================================
-         BRAND
-    ======================================================= -->
-
-    <NuxtLink
-      to="/"
-      class="flex min-w-0 flex-1 items-center gap-2.5"
-      @click="closeMobileMenu"
-    >
-
-      <!-- LOGO -->
-
       <div
-        class="flex h-10 w-10 shrink-0 items-center justify-center overflow-hidden rounded-xl border border-slate-200 bg-white shadow-sm"
+        class="flex h-[72px] items-center gap-3 px-3 sm:px-4"
       >
-        <img
-          src="/images/hero/logo.jpeg"
-          alt="Karate Federation of Nigeria (KFN)"
-          class="h-full w-full object-contain"
-        />
-      </div>
 
+        <!-- ======================================================
+            MENU
+        ======================================================= -->
 
-      <!-- NAME -->
-
-      <div class="min-w-0">
-        <span
-          class="block truncate text-[12px] font-black uppercase leading-[1.15] tracking-tight text-slate-950 sm:text-[13px]"
+        <button
+          type="button"
+          class="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl border border-slate-200 bg-slate-50 text-slate-950 shadow-sm transition-all duration-200 hover:border-green-600 hover:bg-green-600 hover:text-white active:scale-95"
+          aria-label="Open navigation"
+          @click="openMobileMenu"
         >
-          Karate Federation of Nigeria (KFN)
-        </span>
+          <Menu :size="23" />
+        </button>
 
-        <span
-          class="mt-1 block text-[8px] font-black uppercase tracking-[0.22em] text-green-700"
+
+        <!-- ======================================================
+            BRAND
+        ======================================================= -->
+
+        <NuxtLink
+          to="/"
+          class="flex min-w-0 flex-1 items-center gap-2.5"
+          @click="closeMobileMenu"
         >
-          Official Federation
-        </span>
+
+          <!-- LOGO -->
+
+          <div
+            class="flex h-10 w-10 shrink-0 items-center justify-center overflow-hidden rounded-xl border border-slate-200 bg-white shadow-sm"
+          >
+            <img
+              src="/images/hero/logo.jpeg"
+              alt="Karate Federation of Nigeria (KFN)"
+              class="h-full w-full object-contain"
+            />
+          </div>
+
+
+          <!-- NAME -->
+
+          <div class="min-w-0">
+            <span
+              class="block truncate text-[12px] font-black uppercase leading-[1.15] tracking-tight text-slate-950 sm:text-[13px]"
+            >
+              Karate Federation of Nigeria (KFN)
+            </span>
+
+            <span
+              class="mt-1 block text-[8px] font-black uppercase tracking-[0.22em] text-green-700"
+            >
+              Official Federation
+            </span>
+          </div>
+
+        </NuxtLink>
+
+
+        <!-- ======================================================
+            COUNTDOWN / LIVE
+        ======================================================= -->
+
+        <div
+          v-if="!countdown.expired"
+          class="flex shrink-0 items-center gap-1.5 rounded-xl bg-[#06130b] px-2.5 py-2.5 text-white shadow-lg sm:gap-2 sm:px-3"
+        >
+
+          <Clock3
+            :size="14"
+            class="shrink-0 text-green-400"
+          />
+
+          <span
+            class="text-[10px] font-black tabular-nums tracking-wide sm:text-[11px]"
+          >
+            {{ compactCountdown }}
+          </span>
+
+        </div>
+
+
+        <!-- ======================================================
+            LIVE EVENT
+        ======================================================= -->
+
+        <div
+          v-else
+          class="flex shrink-0 items-center gap-1.5 rounded-xl bg-red-600 px-3 py-2.5 text-white shadow-lg"
+        >
+
+          <span
+            class="relative flex h-2 w-2 shrink-0"
+          >
+            <span
+              class="absolute inline-flex h-full w-full animate-ping rounded-full bg-white opacity-70"
+            />
+
+            <span
+              class="relative inline-flex h-2 w-2 rounded-full bg-white"
+            />
+          </span>
+
+          <span
+            class="text-[9px] font-black uppercase tracking-[0.14em]"
+          >
+            Live
+          </span>
+
+        </div>
+
       </div>
-
-    </NuxtLink>
-
-
-    <!-- ======================================================
-         COUNTDOWN / LIVE
-    ======================================================= -->
-
-    <div
-      v-if="!countdown.expired"
-      class="flex shrink-0 items-center gap-1.5 rounded-xl bg-[#06130b] px-2.5 py-2.5 text-white shadow-lg sm:gap-2 sm:px-3"
-    >
-
-      <Clock3
-        :size="14"
-        class="shrink-0 text-green-400"
-      />
-
-      <span
-        class="text-[10px] font-black tabular-nums tracking-wide sm:text-[11px]"
-      >
-        {{ compactCountdown }}
-      </span>
-
     </div>
-
-
-    <!-- ======================================================
-         LIVE EVENT
-    ======================================================= -->
-
-    <div
-      v-else
-      class="flex shrink-0 items-center gap-1.5 rounded-xl bg-red-600 px-3 py-2.5 text-white shadow-lg"
-    >
-
-      <span
-        class="relative flex h-2 w-2 shrink-0"
-      >
-        <span
-          class="absolute inline-flex h-full w-full animate-ping rounded-full bg-white opacity-70"
-        />
-
-        <span
-          class="relative inline-flex h-2 w-2 rounded-full bg-white"
-        />
-      </span>
-
-      <span
-        class="text-[9px] font-black uppercase tracking-[0.14em]"
-      >
-        Live
-      </span>
-
-    </div>
-
-  </div>
-</div>
 
 
 
@@ -1061,7 +1061,34 @@ onBeforeUnmount(() => {
           />
 
         </NuxtLink>
+         <!-- ======================================================
+              AUTH ACTIONS
+          ======================================================= -->
 
+          <div class="ml-3 flex items-center gap-2 border-l border-slate-200 pl-3">
+
+            <!-- LOGIN -->
+
+            <NuxtLink
+              to="/login"
+              class="inline-flex items-center justify-center rounded-xl border border-slate-200 bg-white px-4 py-3 text-xs font-black uppercase tracking-wide text-slate-800 transition-all duration-200 hover:border-green-600 hover:bg-green-50 hover:text-green-700"
+            >
+              Login
+            </NuxtLink>
+
+
+            <!-- SIGN UP -->
+
+            <NuxtLink
+              to="/signup"
+              class="inline-flex items-center gap-2 rounded-xl bg-green-600 px-5 py-3 text-xs font-black uppercase tracking-wide text-white shadow-lg shadow-green-600/20 transition-all duration-200 hover:-translate-y-0.5 hover:bg-green-700"
+            >
+              Sign Up
+
+              <ArrowRight :size="15" />
+            </NuxtLink>
+
+          </div>
 
 
         <!-- ======================================================
@@ -2329,7 +2356,7 @@ onBeforeUnmount(() => {
             </NuxtLink>
 
 
-
+            
             <!-- MOBILE DROPDOWN -->
 
             <div
@@ -2472,6 +2499,46 @@ onBeforeUnmount(() => {
 
           </template>
 
+          <!-- ======================================================
+     MOBILE AUTH ACTIONS
+======================================================= -->
+
+<div class="mt-6 border-t border-slate-200 pt-5">
+
+  <p
+    class="mb-3 px-1 text-[9px] font-black uppercase tracking-[0.2em] text-slate-400"
+  >
+    Member Access
+  </p>
+
+  <div class="grid grid-cols-2 gap-3">
+
+    <!-- LOGIN -->
+
+    <NuxtLink
+      to="/login"
+      class="flex items-center justify-center rounded-xl border border-slate-200 bg-slate-50 px-4 py-3.5 text-xs font-black uppercase tracking-wide text-slate-800 transition hover:border-green-600 hover:bg-green-50 hover:text-green-700"
+      @click="closeMobileMenu"
+    >
+      Login
+    </NuxtLink>
+
+
+    <!-- SIGN UP -->
+
+    <NuxtLink
+      to="/signup"
+      class="flex items-center justify-center gap-2 rounded-xl bg-green-600 px-4 py-3.5 text-xs font-black uppercase tracking-wide text-white shadow-lg shadow-green-600/20 transition hover:bg-green-700"
+      @click="closeMobileMenu"
+    >
+      Sign Up
+
+      <ArrowRight :size="15" />
+    </NuxtLink>
+
+  </div>
+
+</div>
 
 
           <!-- EXTRA SPACE -->
